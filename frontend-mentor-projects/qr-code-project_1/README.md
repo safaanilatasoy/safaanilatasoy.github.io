@@ -35,8 +35,7 @@ In the future of this project, I plan to create a website that allows users to g
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@safaanilatasoy](https://www.frontendmentor.io/profile/safaanilatasoy)
 - LinkedIn - [@safaanilatasoy](https://www.linkedin.com/in/safaanilatasoy/)
 - Github - [@safaanilatasoy](https://github.com/safaanilatasoy)
+- Frontend Mentor - [@safaanilatasoy](https://www.frontendmentor.io/profile/safaanilatasoy)
 - HackerRank - [@safaanilatasoy](https://www.hackerrank.com/profile/safaanilatasoy)
