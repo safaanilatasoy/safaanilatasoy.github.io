@@ -68,8 +68,8 @@ function submitForm() {
 
     cellTitle.innerHTML = title;
     cellChecked.innerHTML = isCompleted
-      ? '<i class="fa-solid fa-check" style="color: #3cbe19;"></i>'
-      : '<i class="fa-solid fa-xmark" style="color: #cb1010;"></i>';
+      ? '<i id="check" class="fa-solid fa-check" style="color: #3cbe19;"></i>'
+      : '<i id="xmark" class="fa-solid fa-xmark" style="color: #cb1010;"></i>';
   } else {
     // Alert text variable
     const alertText = (document.getElementById("alertText").innerHTML =
@@ -94,15 +94,39 @@ function sendSettingsForm() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
+
+  // hide and show for settings menu
   var menu = document.getElementById("menu");
   menu.style.display = "none";
-});
 
-document.addEventListener("DOMContentLoaded", function () {
+  // Keeping the loading time input in the settings menu
   const storedLoadingTime = sessionStorage.getItem("loadingTime");
   if (storedLoadingTime) {
     const loadingTimeInput = document.getElementById("loadingTime");
     loadingTimeInput.value = storedLoadingTime;
   }
+
+
+// **** Changing the icon in the table ****
+// Event listener for isChecked column
+  resultTable.addEventListener("click", function (event) {
+    const target = event.target;
+
+    
+      const checkIcon = target.classList.contains("fa-check");
+      const xmarkIcon = target.classList.contains("fa-xmark");
+      const row = target.closest("tr");
+
+      const cellChecked = row.querySelector("td:nth-child(3)");
+        if (checkIcon) {
+          cellChecked.innerHTML = '<i id="xmark" class="fa-solid fa-xmark" style="color: #cb1010;"></i>';
+        } else {
+          cellChecked.innerHTML = '<i id="check" class="fa-solid fa-check" style="color: #3cbe19;"></i>';
+        }
+      
+    
+  });
+
 });
+
 
