@@ -10,7 +10,7 @@ Week-1
 
 ### Links
 
-- Live Site URL: [https://safaanilatasoy.github.io/kodluyoruz-react-bootcamp/week2/hw-1/]
+- Live Site URL: [https://safaanilatasoy.github.io/kodluyoruz-react-bootcamp/week-2/hw-1/]
 
 ## My process
 
