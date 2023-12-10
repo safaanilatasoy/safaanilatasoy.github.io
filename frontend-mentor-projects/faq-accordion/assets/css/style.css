@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'WorkSans Bold'; /* Font Name */
+    src: url('../fonts/static/WorkSans-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WorkSans Regular'; /* Font Name */
+    src: url('../fonts/static/WorkSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WorkSans SemiBold'; /* Font Name */
+    src: url('../fonts/static/WorkSans-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+padding: 0 10px;
+overflow: hidden;
+flex-direction: column;
+background: url("../images/background-pattern-desktop.svg");
+background-color:hsl(275, 100%, 97%) !important;
+background-repeat: repeat-x;
+background-size: auto; 
+}
+
+
+
+.mainContainer{
+    width: 500px;
+    height: 550px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 20px;
+}
+ .title{
+    display: flex;
+    flex-direction: row;
+    margin-left:10px;
+    padding:30px 0px 0px 0px;
+ }
+ .title img {
+    width: 6%;
+    margin-left: 10px;
+ }
+ .title h1{
+    margin-left: 20px;
+    font-size: 42px;
+    font-weight: 900;
+    font-family: 'WorkSans Bold';
+    color: hsl(292, 42%, 14%);
+ }
+.contentContainer{
+    height: 500px;
+}
+.accordion-item{
+    border:none !important;
+}
+
+
+.accordion-header{
+    font-family: 'WorkSans SemiBold' !important;
+}
+.accordion-button {
+    color: hsl(292, 42%, 14%) !important;
+    font-size: 16px !important;
+}
+.accordion-body{
+    font-family: 'WorkSans Regular' !important;
+    color: hsl(292, 16%, 49%) !important;
+    font-size: 16px !important;
+}
+
+@media only screen and (max-width: 440px) {
+    .mainContainer {
+        width: 90%;
+    }
+}
+
