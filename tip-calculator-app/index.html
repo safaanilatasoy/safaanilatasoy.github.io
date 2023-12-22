@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <span>
+                <h2>S&nbsp;P&nbsp;L&nbsp;I</h2>
+            </span>
+            <span>
+                <h2>T&nbsp;T&nbsp;E&nbsp;R</h2>
+            </span>
+        </div>
+    </header>
+    <main class="mainContainer">
+        <section class="sectionContainer">
+            <div class="sectionLeft">
+                <div class="leftInputContainer">
+                    <span>Bill</span>
+                    <input id="bill-input" type="number" />
+                </div>
+                <!-- Tip Button container -->
+                <div class="leftInputContainer">
+                    <span>Select Tip %</span>
+                    <div class="tip-grid">
+                        <div class="tip-item">
+                            <button class="percentageButton" value="5">%5</button>
+                            <button class="percentageButton" value="10">%10</button>
+                            <button class="percentageButton" value="15">%15</button>
+                        </div>
+                        <div class="tip-item">
+                            <button class="percentageButton" value="25">%25</button>
+                            <button class="percentageButton" value="50">%50</button>
+                            <input id="custom-input" class="tip-item-custom-btn" placeholder="Custom"></input>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="leftInputContainer">
+                    <div class='inputTitle' ><span>Number of people</span><span class='errorTitleHide' id="number-of-people-error">Can't be zero</span></div>
+                    <input id="number-of-people-input" class="" type="number" id="bill">
+                </div>
+            </div>
+            <div class="sectionRight">
+                <div class="calculated-tip-main">
+
+                    <div class="calculated-tip-box">
+                        <div class="calculated-price-label">
+                            <span class="calculated-price-label-title">
+                                <h4>Tip Amount</h4>
+                            </span>
+                            <span class="calculated-price-label-subtitle">/ person</span>
+                        </div>
+                        <span id="tip-amount" class="calculated-price">
+                            <h1>$0.00</h1>
+                        </span>
+                    </div>
+                    <div class="calculated-tip-box">
+                        <div class="calculated-price-label">
+                            <span class="calculated-price-label-title">
+                                <h4>Total</h4>
+                            </span>
+                            <span class="calculated-price-label-subtitle">/ person</span>
+                        </div>
+                        <span id="total-amount" class="calculated-price">
+                            <h1>$0.00</h1>
+                        </span>
+                    </div>
+                </div>
+                <div id="reset-button" class="reset-button-box">
+                    <button>RESET</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>

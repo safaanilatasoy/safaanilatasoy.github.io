@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+body {
+    background: #C5E4E7;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: "Space Mono", monospace;
+    min-width: 345px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #4C6F70;
+    margin-bottom: 6rem;
+}
+
+.header>span>h2 {
+    margin: 0
+}
+
+.mainContainer{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.sectionContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    gap: 2rem
+}
+
+.sectionRight {
+    display: flex;
+    flex-direction: column;
+    background-color: #00474B;
+    flex: 1;
+    box-sizing: border-box;
+    border-radius: 24px;
+    justify-content: space-between;
+    padding: 2rem;
+    padding-top: 3rem;
+    height: 430px;
+}
+
+.sectionLeft{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    font-family: "Space Mono", monospace;
+    justify-content: space-around;
+    
+    
+    
+}
+
+.leftInputContainer
+{
+    border-style: none;
+    font-size: 16px;
+   
+}
+.leftInputContainer input
+{
+   padding: 15px;
+   width: 90%;
+   border-style: none;
+   background-color: #F3F8FB;
+}
+.leftInputContainer span
+{
+   font-size: 14px;
+   font-weight: bold;
+   color: #676c6c;
+}
+
+.inputTitle {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 15px;
+}
+
+.errorTitleShow {
+    display: block !important;
+    color: red !important;
+}
+
+.errorTitleHide {
+    display: none;
+}
+
+.tip-item-custom-btn{
+    background-color: #F3F8FB !important;
+    color: #00474B !important;
+    font-weight: bold;
+}
+
+.billInput {
+background-color: #F3F8FB;
+}
+.tip-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.tip-item {
+    display: flex;
+    gap: 0.8rem;
+}
+
+
+.tip-item button {
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    flex:1;
+    padding: 10px;
+}
+
+.percentageButton {
+    background-color: #00474B;
+}
+
+.percentageButton.active {
+    background-color: #26c0ab;
+}
+
+.tip-item button.active{
+    background-color: #26c0ab;
+}
+
+.tip-grid-container {
+    background-color: #fff;
+    flex:1;
+    padding: 10px;
+}
+
+.custom-tip-input {
+    background-color: #e4e4e4 !important;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    color: #547878;
+    padding: 10px;
+}
+
+.calculated-tip-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem
+}
+
+.calculated-tip-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    flex: 1;
+}
+
+.calculated-tip-box>span>h1 {
+    margin: 0
+}
+
+.calculated-price {
+    color: #2ABDAA;
+    font-size: 32px;
+}
+
+.calculated-price-label {
+    display: flex;
+    flex-direction: column
+}
+
+.calculated-price-label>span>h4 {
+    margin: 0
+}
+
+.calculated-price-label-title {
+    color: white;
+}
+
+.calculated-price-label-subtitle {
+    color: #4C8388;
+}
+.reset-button-box {
+    display: flex;
+}
+
+.reset-button-box button {
+    background-color: #9fe8df;
+    border-radius: 8px;
+    padding: 15px 15px;
+    width: '100%';
+    color: #00474b;
+    font-weight: bold;
+    font-size: large;
+    margin: 5px 10px;
+    width: 100%;
+    border: none;
+}
