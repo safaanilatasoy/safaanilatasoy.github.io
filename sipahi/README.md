@@ -1,2 +1,0 @@
-# sipahi-apartment-administration
- 
