@@ -175,7 +175,7 @@
       </ul>
       
   </div>
-  <div class="content" style="display: flex; flex-direction: row; justify-content: start;">
+  <div class="content classic" style="display: flex; flex-direction: row; justify-content: start;">
     <div class="window-inner-files" id="reset-theme">
       <img class="mainIcon"  src="images/dogLogo.png"/>
       <span>Regular</span>
@@ -242,7 +242,7 @@
             </ul>
             
         </div>
-        <div class="content">
+        <div class="content classic" style="display: flex; flex-direction: row; justify-content: start;">
           <div class="window-inner-files" onclick="openFolder('dont-click2','block')">
             <img class="mainIcon"  src="images/fileLogo.png"/>
             <span>I SAID DON'T CLICK</span>
@@ -271,7 +271,7 @@
           </ul>
           
       </div>
-      <div class="content">
+      <div class="content classic">
         <div class="window-inner-files" onclick="openFolder('dont-click3','block')">
           <img class="mainIcon"  src="images/fileLogo.png"/>
           <span>BRO.. Last Change</span>
@@ -299,7 +299,7 @@
         </ul>
         
     </div>
-    <div class="content">
+    <div class="content classic">
       <div class="window-inner-files" onclick="triggerErrorScreen()">
         <img class="mainIcon"  src="images/whitepaperLogo.png"/>
         <span>hotdogs.bat</span>
@@ -330,7 +330,7 @@
             </ul>
           
           </div>
-          <div class="content whitepaper">
+          <div class="content classic whitepaper">
           <img src="./images/whitepapercon.png" class="whitepaper-image">
       </div>
     </div>
@@ -357,11 +357,10 @@
             </ul>
           
           </div>
-          <div class="content">
+          <div class="content classic">
             <p><img src="./images/dogOstext.png" alt="" style="width: 100%; padding:60px 0 60px 0;" class="credit-logo-text"></p>
           <p><strong>Co-Founder <span><a href="#" style="color: #010081; text-decoration: underline;">AshParker.eth</a></span></strong><span style="margin-left:10px;">ash@hotdogs.wtf</span></p>
           <p><strong>Co-Founder <span><a href="#" style="color: #010081; text-decoration: underline;">Vindthekaiju</a></span></strong><span style="margin-left:10px;">vind@hotdogs.wtf</span></p>
-          <p><strong>Artist <span><a href="https://x.com/TitanTheDev" style="color: #010081; text-decoration: underline;" target="_blank">Zonix</a></strong></p>
           <p><strong>Developer <span><a href="https://x.com/TitanTheDev" style="color: #010081; text-decoration: underline;" target="_blank">XsTitan</a></span></strong></p>
       </div>
     </div>
@@ -389,7 +388,7 @@
             </ul>
           
           </div>
-          <div class="content whitepaper">
+          <div class="content whitepaper classic">
             <iframe src="./notepad/index.html" width="100%" height="100%" frameborder="0"></iframe>
       </div>
     </div>
@@ -438,8 +437,9 @@
                 <p><img src="./images/hdgsLogo.png" id="hotdogsicon" class="crypto-icon" style="border-radius:100%;">$HOTDOGS: <span id="xrpPrice">SOON...</span> </p>
               </div>
             </div>
-      </div>
-    </div>
+          </div>
+          <img class="snowTop hidden snow" src="images/snowtop.png" alt="">
+        </div>
 <!--* Whitepaper Section End-->
 
 
@@ -485,7 +485,7 @@
             <img src="images/close.svg" width="20"/>
         </div>
         </div>
-        <div class="content">
+        <div class="content classic">
           <div class="line">HotDogs OS [Version 10.0.19041.1237]</div>
           <div class="line">(c) 2024 HotDogs. All rights reserved.</div>
           <div class="line"></div>
@@ -1001,15 +1001,16 @@
             overflow: hidden;
           }
       
-          .window .center .center-middle media-controller {
-            display: block;
+           .window .center .center-middle media-controller {
+             display: block;
             width: 100%;
             height: 100%;
             background: url("images/winpump.gif");
             background-size: contain;
-            background-repeat: initial;
-          }
-      
+            background-repeat: initial; 
+          } 
+        
+
           .window .center .center-right {
             width: 8px;
             height: 100%;
@@ -1130,7 +1131,7 @@
                 <li>Help</li>
             </ul>
         </div>
-        <div class="content centered">
+        <div class="content classic centered">
             <h2>Very soon...</h2>
         </div>
     </div>
@@ -1155,7 +1156,7 @@
       </div>
   </div>
   
-  <div class="content centered make-full">
+  <div class="content classic centered make-full">
 
       <img src="./images/popup1-text.gif" class="popup-text"/>
 
@@ -1206,8 +1207,10 @@
 <!--* Start Menu End-->
 
 
-<!--* Taskbar Start-->
+<!--* Taskbar Start--> 
 <div class="taskbar">
+  <img class="snowBottom hidden snow" src="./images/snowbottom.png" alt="" />
+   
     <button class="startButton" onclick="toggleStartMenu()">
         <img src="images/dogLogo.png"/>
        <span>Start</span> 

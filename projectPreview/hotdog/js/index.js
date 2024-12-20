@@ -283,10 +283,10 @@ function openWindow(windowId,displayCondition) {
 }
 
 // Tema Changing
-
+const snowBottom = document.getElementsByClassName('snowBottom');
+const snowTop = document.getElementsByClassName('snowTop');
 let snowing = false;
 let themeChanged = false;
-
 document.getElementById('make-snow').addEventListener('click', function() {
     if (!themeChanged) {
         document.body.classList.add('snow-theme');
@@ -303,6 +303,10 @@ document.getElementById('reset-theme').addEventListener('click', function() {
     stopSnow();
     snowing = false;
     themeChanged = false;
+});
+
+document.getElementById('themeToggle').addEventListener('click', function() {
+  document.body.classList.toggle('snow-theme');
 });
 
 function startSnow() {

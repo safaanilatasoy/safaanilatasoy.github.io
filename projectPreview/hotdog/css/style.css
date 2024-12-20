@@ -33,8 +33,23 @@ body{
   z-index: -1; /* İçeriğin arkasında kalması için */
   transition: background-color 0.5s ease;  /* Arka plan rengi ve opaklık için geçiş */
 }
-
-
+ .snowBottom{
+  position: fixed;
+  bottom: 10px;
+  left: 60%;
+  width: 290px;
+  z-index: 9999;
+} 
+.snowTop{
+  position: absolute;
+  width: 250px;
+  left: 90px;
+  top: -20px;
+  z-index: 99999;
+} 
+.hidden{
+  display: none;
+}
 .centered{
     display: flex;
     justify-content: center;
@@ -308,7 +323,7 @@ border: 1px dotted #fff;
 
 .content {
     padding: 10px;
-    background-color: #e9e4e4;
+    background-color: #fdffff;
     width: 99%;
     height: 86.5%;
     justify-content: center;
@@ -836,6 +851,10 @@ cursor: grab;
     color: #fff;  
 
 }
+.snow-theme  .taskbar-tab.active {
+    
+  background: #1f3520;
+}
 .snow-theme .bin-general-component{
   transition: background-color 0.5s ease;
   background-color: #2f7b60;
@@ -850,13 +869,22 @@ cursor: grab;
   background-color: #2f7b60;
 }
 .snow-theme{
-  background-image: url("../images/whiteDogBackground.png"); /* Varsayılan arka plan resmi */
-  background-size: contain;
+  background-image: url("../images/whiteDogLogo.png"); /* Varsayılan arka plan resmi */
+  background-size: cover;
   background-position: center;
   background-color: #aa2a22;
   transition: background-color 0.5s ease;  /* Arka plan rengi ve opaklık için geçiş */
   cursor: default;
 }
+.snow-theme .classic, .snow-theme .window-url-bar {
+  background-color: #9cd7a0 !important;
+  color: #000;
+}
+.snow-theme .snow{
+  display: block;
+  transition:all 0.5s ease;
+}
+
 
 /* Snow theme end */
   .popup-general-component  .content{
@@ -932,7 +960,9 @@ cursor: grab;
     width: 100%;
     height: 100vh;
 }
-
+.snowBottom{
+  left: 25%;
+}
 
   .taskbar{
     width: 100%;
@@ -944,7 +974,6 @@ cursor: grab;
 
     
 }
-
 
 
 
@@ -1107,6 +1136,9 @@ height: 300px;
       display: none; 
    
     }
+    .snowBottom{
+      left: 25%;
+    }
     .draggableImage {
       width:50px;
       height: 80px;
@@ -1240,7 +1272,9 @@ height: 460px;
     overflow-y: auto;
   }
   
-  
+  .snowBottom{
+    left: 25%;
+  }
   .marketPrices{
     background-color: #000 !important;
     width: 100%;
@@ -1425,7 +1459,9 @@ margin: 150px;
     overflow-y: auto;
   }
   
-  
+  .snowBottom{
+    left: 45%;
+  }
   .marketPrices{
     background-color: #000 !important;
     width: 100%;
@@ -1589,7 +1625,9 @@ margin: 150px;
     width: 24%;
     overflow-y: auto;
   }
-  
+  .snowBottom{
+    left: 45%;
+  }
   
   .marketPrices{
     background-color: #000 !important;
