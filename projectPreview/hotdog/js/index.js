@@ -67,15 +67,31 @@ dragable.forEach(function (image) {
   image.addEventListener("mouseup", onMouseUp);
 });
 
+
+let clickCount = 0;
+let clickTimer;
 // Klasör açma fonksiyonu
 function openFolder(folderId, displayCondition) {
-  if (temp  == 1) {  // Bir kez sürükleme yapılmışsa
-    var folders = document.getElementsByClassName("folder");
-    for (var i = 0; i < folders.length; i++) {
-      folders[i].style.display = "none"; // Tüm klasörleri gizleyin
-    }
-   
-    var folder = document.getElementById(folderId);
+  clickCount++;
+  if(clickCount === 1){
+    clickTimer = setTimeout(() => {
+      // Tek tıklama işlemi (eğer gerekiyorsa)
+      console.log("Tek tıklama");
+      clickCount = 0; // Tıklama sayacını sıfırla
+  }, 300); // 300ms bekleme süresi
+  } else if (clickCount === 2){
+    // Çift tıklama olduğunda
+    clearTimeout(clickTimer); // Zamanlayıcıyı temizle
+    clickCount = 0; // Tıklama sayacını sıfırla
+
+    // Çift tıklama işlemi
+    if (temp == 1) {  // Bir kez sürükleme yapılmışsa
+      var folders = document.getElementsByClassName("folder");
+      for (var i = 0; i < folders.length; i++) {
+          folders[i].style.display = "none"; // Tüm klasörleri gizleyin
+      }
+
+      var folder = document.getElementById(folderId);
     folder.style.display = displayCondition; // Tıklanan klasörü gösterin
     folder.style.zIndex = "9999";
 
@@ -127,6 +143,16 @@ function openFolder(folderId, displayCondition) {
       default:
         newTab.textContent = "Tab";
     }
+    newTab.setAttribute('data-window-id', folderId);
+    newTab.addEventListener('click', () => setActiveTab(folderId, displayCondition));
+    taskbarTabs.appendChild(newTab);
+
+    // Yeni pencereyi aktif yap
+    setActiveTab(folderId, displayCondition);
+  }
+ 
+   
+    
     newTab.setAttribute('data-window-id', folderId);
     newTab.addEventListener('click', () => setActiveTab(folderId,displayCondition));
     taskbarTabs.appendChild(newTab);
@@ -244,6 +270,8 @@ function restartPage() {
   location.reload(); // Sayfayı yeniler
 }
 
+
+
 function openWindow(windowId,displayCondition) {
   const targetWindow = document.getElementById(windowId);
   if (targetWindow) {
@@ -294,3 +322,4 @@ function stopSnow() {
         snowflakes[0].parentNode.removeChild(snowflakes[0]);
     }
 }
+

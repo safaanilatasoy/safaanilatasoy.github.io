@@ -18,8 +18,22 @@ body{
     background-color: #07cc6e;
     cursor: url('../images/cursor3.cur'),auto;
     font-family: "Pixelify Sans", sans-serif;
+    transition: background-color 0.5s ease;  /* Arka plan rengi ve opaklık için geçiş */
+   
 
 }
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  transition: opacity 0.5s ease; /* Opaklık için geçiş */
+  z-index: -1; /* İçeriğin arkasında kalması için */
+  transition: background-color 0.5s ease;  /* Arka plan rengi ve opaklık için geçiş */
+}
+
 
 .centered{
     display: flex;
@@ -100,9 +114,8 @@ width: 5vh;
     width:55px;
     height: 80px;
     cursor: pointer;
-    position: absolute;
-    top: 0; /* Başlangıç yüksekliği */
-    left: 0; /* Başlangıç genişliği */
+    position: relative;
+  
 }
 
 .draggableImage img {
@@ -216,6 +229,11 @@ border: 1px dotted #fff;
     left: 125px;
 }
 
+.draggableImage:nth-child(15) {
+    top: 25px;
+    left: 175px;
+}
+ 
 
 
 
@@ -770,6 +788,10 @@ cursor: grab;
       transform: rotate(360deg);
     }
   }
+  #paint-window{
+    width: 80% !important;
+    height: 90% !important;
+  }
 
   /* Popup */
   .popup-general-component {
@@ -792,40 +814,48 @@ cursor: grab;
 /* Snow theme start*/
  .snow-theme .popup-general-component .title-bar{
     transition: background-color 0.5s ease;
-    background-color: #e84118;
+    background-color: #2f7b60;
     color: #fff;
     
 }
 .snow-theme .popup-general-component {
   transition: background-color 0.5s ease;
-  background-color: #e84118;
+  background-color: #2f7b60;
   color: #fff;
   
 }
 .snow-theme .taskbar{
   transition: background-color 0.5s ease;
-  background-color: #e84118;
+  background-color: #2f7b60;
   color: #fff;
 }
 .snow-theme .taskbar button{
   transition: background-color 0.5s ease;
-    background: #f3481e;
+    background: #2f7b60;
     border-color: #fff #000 #000 #fff;
     color: #fff;  
 
 }
 .snow-theme .bin-general-component{
   transition: background-color 0.5s ease;
-  background-color: #f3481e;
+  background-color: #2f7b60;
   
 }
 .snow-theme .title-bar{
   color: #fff;
   transition: background-color 0.5s ease;
-  background-color: #f3481e;
+  background-color: #2f7b60;
 }
 .snow-theme .close-button{
-  background-color: #f3481e;
+  background-color: #2f7b60;
+}
+.snow-theme{
+  background-image: url("../images/whiteDogBackground.png"); /* Varsayılan arka plan resmi */
+  background-size: contain;
+  background-position: center;
+  background-color: #aa2a22;
+  transition: background-color 0.5s ease;  /* Arka plan rengi ve opaklık için geçiş */
+  cursor: default;
 }
 
 /* Snow theme end */
@@ -1598,7 +1628,7 @@ margin: 150px;
   }
   .draggableImage {
     width:58px;
-    height: 80px;
+    height: 85px;
     padding: 5px;
     position: absolute;
     top: 0; /* Başlangıç yüksekliği */
