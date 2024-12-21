@@ -820,7 +820,22 @@ cursor: grab;
     overflow:hidden;
     
 }
+  .popup-general-component-2 {
+    background-color: #808080;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border: 3px groove #fff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    overflow:hidden;
+    
+}
   .popup-general-component .title-bar{
+    background-color: #808080;
+    color: #fff;
+    
+}
+  .popup-general-component-2 .title-bar{
     background-color: #808080;
     color: #fff;
     
@@ -833,7 +848,18 @@ cursor: grab;
     color: #fff;
     
 }
+ .snow-theme .popup-general-component-2 .title-bar{
+    transition: background-color 0.5s ease;
+    background-color: #2f7b60;
+    color: #fff;
+    
+}
 .snow-theme .popup-general-component {
+  transition: background-color 0.5s ease;
+  background-color: #2f7b60;
+  color: #fff;
+}
+.snow-theme .popup-general-component-2 {
   transition: background-color 0.5s ease;
   background-color: #2f7b60;
   color: #fff;
@@ -882,7 +908,6 @@ cursor: grab;
 }
 .snow-theme .snow{
   display: block;
-  transition:all 0.5s ease;
 }
 
 
@@ -894,8 +919,19 @@ cursor: grab;
     flex-direction: column;
     
 }
+  .popup-general-component-2  .content{
+    background-image: url(../images/popup-background.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    
+}
+/* Snow theme end */
 
 .popup-general-component iframe {
+  overflow: hidden;
+}
+.popup-general-component-2 iframe {
   overflow: hidden;
 }
 #popup-window-1{
@@ -905,6 +941,15 @@ cursor: grab;
   max-height: 800px;
   width: 60%;
   height: 80%;
+}
+#popup-window-2{
+  top: 62%;
+  left: 65%;
+  max-width: 350px;
+  max-height: 350px;
+  width: 60%;
+  height: 80%;
+ 
 }
 #crypto-prices{
   display: block; 
@@ -996,6 +1041,7 @@ cursor: grab;
   flex-direction: column;
   
 }
+
 
 #popup-window-1{
 top: 25%;
