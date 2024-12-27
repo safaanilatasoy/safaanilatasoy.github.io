@@ -36,22 +36,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
       case 'help':
         startProcessSimulation(helpMessages);
         return;
-      case 'mrhackerdog':
-        startProcessSimulation(getCode);
-        return;
-      case 'cd code':
-        startProcessSimulation(getCode2);
-        return;
       case 'dir':
         response = `
           Volume in drive C is OS<br/>
           Directory of C:\\Hotdog\\User<br/><br/>
           23/11/2023  10:12 AM    &lt;DIR&gt;          Documents<br/>
           23/11/2023  10:12 AM    &lt;DIR&gt;          Downloads<br/>
-          24/11/2023  10:12 AM    &lt;DIR&gt;         <span class="error"> Code </span><br/>
                          0 File(s)              0 bytes<br/>
                          2 Dir(s)  64,123,456,789 bytes free
-                         (you can try ls, cd "word", cat, more, , type, del, mkdir, rmdir, echo, and clear commands)
+                         (you can try ls, cd, cat, more, type, del, mkdir, rmdir, echo, and clear commands)
         `;
         break;
       case 'cls':
@@ -99,7 +92,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     'Loading hotdog toppings... pickles incoming...',
     "Hotdog magic happening... don't blink",
     "Hotdog delivery confirmed... it's on the way!",
-    'use mrhackerdog'
   ];
 
   const getCode = [

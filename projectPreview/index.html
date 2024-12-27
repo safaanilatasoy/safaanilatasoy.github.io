@@ -158,10 +158,10 @@
     <img class="mainIcon"  src="images/kurabiye.png"/>
     <span>Themes</span>
 </div>
-  <!-- <div class = "draggableImage themesButton" onclick="openFolder('honorary-file','block')">
-    <img class="mainIcon"  src="images/kurabiye.png"/>
+ <div class = "draggableImage themesButton" onclick="openFolder('honorary-file','block')">
+    <img class="mainIcon"  src="images/trophy.png"/>
     <span>Honorary Hotdogs</span>
-</div> -->
+</div>
    
 
 
@@ -196,6 +196,10 @@
     <div class="window-inner-files" id="make-snow">
       <img class="mainIcon"  src="images/newyear.png"/>
       <span>New Year</span>
+  </div>
+    <div class="window-inner-files" id="make-zombie">
+      <img class="mainIcon"  src="images/zombiehead.png"/>
+      <span>Zombie</span>
   </div>
   
     
@@ -1091,7 +1095,7 @@
               <div slot="preview"></div>
             </media-time-range>
             <media-volume-range mediacontroller="controller"></media-volume-range>
-            <div class="close-button" data-folder-id="music-player" style="position:absolute; cursor:pointer; padding:2px; right: 3px;">
+            <div class="close-button" onclick="closeWindow('music-player')" data-folder-id="music-player" style="position:absolute; cursor:pointer; padding:2px; right: 3px;">
               <img src="images/close.svg" width="10"/>
           </div>
             <div class="header" style="color: #fff; display: flex; justify-content: center; align-items: center; margin:auto; font-size:10px; margin-top: 10px;">WinPump</div>
@@ -1180,7 +1184,7 @@
 
 <!--* Olive Section End-->
 <!--* Honorary Section Start-->
-    <!-- <div class="bin-general-component drag" id="honorary-file">
+    <div class="bin-general-component drag" id="honorary-file">
         <div class="title-bar header" id="myComputerHeader">
             <div class="title">Honorary Hotdogs</div>
             <div class="close-button" data-folder-id="honorary-file">
@@ -1198,70 +1202,67 @@
         <div class="content classic centered">
           <div class="honorary-window">
             <div class="honorary-gallery">
-              <div class="honorary-item">
-                <img src="images/honorary-item.png">
-                <span>@Username</span>
+              <div class="honorary-item"><a href="#">
+                <img src="images/Honorary/CozomoMedici_1.png"></a>
+                <span>CozomoMedici_1</span>
               </div>
-              <div class="honorary-item">
-                <img src="images/honorary-item.png">
-                <span>@Username</span>
+              <div class="honorary-item"><a href="#">
+                <img src="images/Honorary/XCOPYART.png"></a>
+                <span>XCOPYART</span>
               </div>
-              <div class="honorary-item">
-                <img src="images/honorary-item.png">
-                <span>@Username</span>
+
+              <div class="honorary-item"><a href="#">
+                <img src="images/Honorary/pranksyy.png"></a>
+                <span>pranksyy</span>
               </div>
-              <div class="honorary-item">
-                <img src="images/honorary-item.png">
-                <span>@Username</span>
+              <div class="honorary-item"><a href="#">
+                <img src="images/Honorary/DesLucrece.png"></a>
+                <span>DesLucrece</span>
               </div>
-              <div class="honorary-item">
-                <img src="images/honorary-item.png">
-                <span>@Username</span>
+
+
+
+
+              <div class="honorary-item"><a href="#">
+                <img src="images/Honorary/LucaNetz.png"></a>
+                <span>LucaNetz</span>
               </div>
-              <div class="honorary-item">
-                <img src="images/honorary-item.png">
-                <span>@Username</span>
+
+              <div class="honorary-item"><a href="#">
+                <img src="images/Honorary/0xCygaar.png"></a>
+                <span>0xCygaar</span>
               </div>
-              <div class="honorary-item">
-                <img src="images/honorary-item.png">
-                <span>@Username</span>
+              <div class="honorary-item"><a href="#">
+                <img src="images/Honorary/Abruzuc.png"></a>
+                <span>Abruzuc</span>
               </div>
-              <div class="honorary-item">
-                <img src="images/honorary-item.png">
-                <span>@Username</span>
+              <div class="honorary-item"><a href="#">
+                <img src="images/Honorary/coffeexcoin.png"></a>
+                <span>coffeexcoin</span>
               </div>
-              <div class="honorary-item">
-                <img src="images/honorary-item.png">
-                <span>@Username</span>
+             
+              <div class="honorary-item"><a href="#">
+                <img src="images/Honorary/Hedgeguin.png"></a>
+                <span>Hedgeguin</span>
               </div>
-              <div class="honorary-item">
-                <img src="images/honorary-item.png">
-                <span>@Username</span>
+ 
+              <div class="honorary-item"><a href="#">
+                <img src="images/Honorary/masoncags.png"></a>
+                <span>masoncags</span>
               </div>
-              <div class="honorary-item">
-                <img src="images/honorary-item.png">
-                <span>@Username</span>
+           
+              <div class="honorary-item"><a href="#">
+                <img src="images/Honorary/stinkypablo.png"></a>
+                <span>stinkypablo</span>
               </div>
-              <div class="honorary-item">
-                <img src="images/honorary-item.png">
-                <span>@Username</span>
-              </div>
-              <div class="honorary-item">
-                <img src="images/honorary-item.png">
-                <span>@Username</span>
-              </div>
-              <div class="honorary-item">
-                <img src="images/honorary-item.png">
-                <span>@Username</span>
-              </div>
-              <div class="honorary-item">
-                <img src="images/honorary-item.png">
-                <span>@Username</span>
+              <div class="honorary-item"><a href="#">
+                <img src="images/Honorary/UNREVEALED.png"></a>
+                <span>???</span>
               </div>
             </div>
           </div>
         </div>
-    </div> -->
+    </div> 
 
 <!--* Honorary Section End-->
 
@@ -1312,7 +1313,9 @@
 <!-- Popup 3 start -->
 <div class="supported-bin drag supportCon" id="support-window"  style="display: block;">
   <div class="title-bar header" id="myComputerHeader" style="height: 20px;">
-      <div class="title" style="font-weight: bold; font-size: 13px;">Supported by...</div>
+      <div class="title" style="font-weight: bold; font-size: 13px;">
+        Partners
+      </div>
       <div class="close-button" data-folder-id="support-window">
           <img src="images/close.svg" width="20"/>
       </div>
@@ -1324,7 +1327,7 @@
 </div>
 <!-- Popup 3 End -->
 <!-- Popup 4 start -->
-<div class="collab-bin drag collabCon" id="popup-window-3">
+<!-- <div class="collab-bin drag collabCon" id="popup-window-3">
   <div class="title-bar header" id="myComputerHeader" style="background-color: #808080 !important; color: #fff;">
       <div class="title">Collab Forms</div>
       <div class="close-button" data-folder-id="popup-window-3">
@@ -1340,11 +1343,11 @@
   <img src="./images/3_mcdonal_extended_logo1.png" class="collab-kitchen-abstract-logo"/>
 
 
-  <a href="#" target="__blank">
+  <a href="https://app.deform.cc/form/70259266-2f8e-4c98-85b6-0c5946f53ce2" target="__blank">
   <img src="./images/kolform3.png" class="KOLcollabform-text"/>
   <div class="collab-heaven pixel2"></div></a>
 
-  <a href="#" target="__blank">
+  <a href="https://app.deform.cc/form/d4fd6dfa-8e3e-4c65-96ce-d05f53d5e366" target="__blank">
   <img src="./images/communitycollab-text.png" class="community-collab-text" />
   <div class="collab-community"></div></a>
 
@@ -1360,8 +1363,24 @@
   </div>
     
   </div>
-</div>
+</div> -->
 <!-- Popup 1 End -->
+
+
+<div class="popup-general-component-2 hidden drag zombie" id="popup-window-3">
+  <div class="title-bar header" id="myComputerHeader">
+      <div class="title">Popup</div>
+      <div class="close-button" data-folder-id="popup-window-3">
+          <img src="images/close.svg" width="20"/>
+      </div>
+  </div>
+  
+  <div class="content classic centered make-full" style=" background-image: url(../images/zombie.gif); background-size: contain;">
+
+
+     
+  </div>
+</div>
 <!--* Popup Section End-->
 
 </div>

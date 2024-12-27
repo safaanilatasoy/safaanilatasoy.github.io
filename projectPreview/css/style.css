@@ -323,7 +323,7 @@ border: 1px dotted #fff;
 }
 
 .draggableImage:nth-child(15) {
-    top: 25px;
+    top: 30px;
     left: 175px;
 }
  
@@ -379,8 +379,8 @@ border: 1px dotted #fff;
   transition: background-color 0.5s ease;
 }
 .collabCon{
-  top: 48%;
-  left: 50%;
+  top: 44%;
+  left: 40%;
   width: 1050px; 
   height: 600px;
   box-sizing: border-box;
@@ -1186,6 +1186,11 @@ cursor: grab;
   background-color: #2f7b60;
   color: #fff;
 }
+.zombie-theme .taskbar{
+  transition: background-color 0.5s ease;
+  background-color: #2f7b60;
+  color: #fff;
+}
 .snow-theme .taskbar button{
   transition: background-color 0.5s ease;
     background: #2f7b60;
@@ -1228,6 +1233,217 @@ cursor: grab;
 
 
 /* Snow theme end */
+
+/* Snow theme start*/
+.zombie-theme .popup-general-component .title-bar{
+  transition: background-color 0.5s ease;
+  background-color: #3b3a56 ;
+  color: #fff;
+  
+}
+.zombie-theme .popup-general-component-2 .title-bar{
+  transition: background-color 0.5s ease;
+  background-color: #3b3a56 ;
+  color: #fff;
+  
+}
+.zombie-theme .popup-general-component {
+transition: background-color 0.5s ease;
+background-color: #3b3a56 ;
+color: #fff;
+}
+.zombie-theme .popup-general-component-2 {
+transition: background-color 0.5s ease;
+background-color: #3b3a56 ;
+color: #fff;
+
+}
+.zombie-theme .taskbar{
+transition: background-color 0.5s ease;
+background-color: #3b3a56 ;
+color: #fff;
+}
+.zombie-theme .taskbar{
+transition: background-color 0.5s ease;
+background-color: #3b3a56;
+color: #fff;
+}
+.zombie-theme .taskbar button{
+transition: background-color 0.5s ease;
+  background: #3b3a56 ;
+  border-color: #fff #000 #000 #fff;
+  color: #fff;  
+
+}
+.zombie-theme  .taskbar-tab.active {
+  
+background: #302f46;
+}
+.zombie-theme .bin-general-component{
+transition: background-color 0.5s ease;
+background-color: #3b3a56 ;
+
+}
+.zombie-theme .title-bar{
+color: #fff;
+transition: background-color 0.5s ease;
+background-color: #3b3a56 ;
+}
+.zombie-theme .close-button{
+background-color: #3b3a56 ;
+}
+.zombie-theme{
+background-image: url("../images/zombieDogBg.png"); /* Varsayılan arka plan resmi */
+background-size: cover;
+background-position: center;
+background-color: #43698f ;
+transition: background-color 0.5s ease;  /* Arka plan rengi ve opaklık için geçiş */
+cursor: default;
+}
+.zombie-theme .classic, .zombie-theme .window-url-bar {
+background-color: #8786bc !important;
+color: #000;
+}
+.zombie-theme .zombie{
+display: block;
+}
+.zombie-theme {
+  background-color: #1a0f0f;
+  transition: background-color 0.5s;
+  position: relative;
+  overflow: hidden;
+}
+
+.blood {
+  position: absolute;
+  top: -20px;
+  background: linear-gradient(to bottom, #8b0000, #660000);
+  opacity: 0.7;
+  border-radius: 50%;
+  animation: bloodfall 4s linear;
+  filter: drop-shadow(0 0 5px rgba(139, 0, 0, 0.5));
+}
+
+@keyframes bloodfall {
+  0% {
+      transform: translateY(-20px);
+      opacity: 0.7;
+  }
+  80% {
+      opacity: 0.7;
+  }
+  100% {
+      transform: translateY(100vh);
+      opacity: 0;
+  }
+}
+
+/* Ekran sallama efekti */
+.shake-effect {
+  animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Şimşek efekti */
+.lightning {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  animation: flash 0.15s ease-in;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+@keyframes flash {
+  0% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+.rain {
+  position: absolute;
+  top: -50px;
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.4));
+  width: 1px;
+  height: 20px;
+  animation: rainfall linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes rainfall {
+  0% {
+      transform: translateY(-50px) skewX(-15deg);
+  }
+  100% {
+      transform: translateY(calc(100vh + 50px)) skewX(-15deg);
+  }
+}
+
+/* Yağmur damlası izi efekti */
+.rain::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+/* Zombie teması güncelleme */
+.zombie-theme {
+  transition: background-color 0.5s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Yağmur sisi efekti */
+.zombie-theme::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.1)
+  );
+  pointer-events: none;
+}
+
+/* Şimşek parlaması sırasında yağmur damlalarının daha görünür olması için */
+.lightning + .rain {
+  opacity: 0.6;
+}
+
+/* Zombie teması için karanlık efekt */
+.zombie-theme::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.3) 100%);
+  pointer-events: none;
+}
   .popup-general-component  .content{
     background-image: url(../images/popup-background.png);
     background-size: cover;
@@ -1251,7 +1467,7 @@ cursor: grab;
   overflow: hidden;
 }
 #popup-window-1{
-  display: none;
+  display: block;
   top: 50%;
   left: 35%;
   max-width: 800px;
@@ -1261,6 +1477,16 @@ cursor: grab;
   
 }
 #popup-window-2{
+  top: 62%;
+  left: 65%;
+  max-width: 348px;
+  max-height: 350px;
+  width: 60%;
+  height: 80%;
+  object-fit: contain;
+ 
+}
+#popup-window-3{
   top: 62%;
   left: 65%;
   max-width: 348px;
@@ -1316,16 +1542,24 @@ cursor: grab;
 
 /* Honorary section */
 
+
+
+
 /* Pencere stili */
 .honorary-window {
   width: 600px; /* İstediğiniz genişlik */
-  height: 400px; /* İstediğiniz yükseklik */
+  height: 100%; /* İstediğiniz yükseklik */
   overflow-y: auto; /* Dikey kaydırma */
   /* border: 2px solid #000; Windows95 kenarlık stili 
   background-color: #C0C0C0;  Windows95 arka plan rengi  */
   padding: 10px;
   box-sizing: border-box;
  
+}
+
+#honorary-file{
+  height: 550px !important;
+  width: 600px;
 }
 
 /* Galeri stili */
@@ -1340,7 +1574,6 @@ cursor: grab;
 .honorary-item {
   width: calc(24.5% - 10px); /* 4 kolon için genişlik ayarı */
   margin: 5px;
-  background-color: #FFF;
   box-sizing: border-box;
   /* İçerik hizalama */
   display: flex;
@@ -1348,6 +1581,7 @@ cursor: grab;
   align-items: center;
   justify-content: center;
   margin-top: 10px;
+
   
 }
 .honorary-item img {
@@ -1355,8 +1589,13 @@ cursor: grab;
   height: 100px; /* İsteğe bağlı resim yüksekliği */
   margin-bottom: 10px; /* İsteğe bağlı alt boşluk */
   object-fit: contain; /* Resim boyutu */
+  cursor: pointer;
 }
-
+.honorary-item span{
+  font-size: 11px;
+  font-weight: 600;
+  color: #000;
+}
 
 /* Scrollbar genel stili */
 .honorary-window::-webkit-scrollbar {

@@ -152,6 +152,9 @@ function openFolder(folderId, displayCondition) {
       case "honorary-file":
         newTab.textContent = "Honorary Hotdogs";
         break;
+      case "crypto-prices":
+        newTab.textContent = "Market Prices";
+        break;
       default:
         newTab.textContent = "Tab";
     }
@@ -238,17 +241,17 @@ function handleCloseEvent(event) {
       }
     });
     
-    window.onload = function() {
-      startSnow();
-      if (!themeChanged) {
-        document.body.classList.add('snow-theme');
-        themeChanged = true;
-    }
-    if (!snowing) {
-        startSnow();
-        snowing = true;
-    } 
-    }
+    // window.onload = function() {
+    //   startSnow();
+    //   if (!themeChanged) {
+    //     document.body.classList.add('snow-theme');
+    //     themeChanged = true;
+    // }
+    // if (!snowing) {
+    //     startSnow();
+    //     snowing = true;
+    // } 
+    // }
 
     function triggerErrorScreen() {
       let windowComponent = document.getElementById('dont-click3');
@@ -309,26 +312,44 @@ const snowBottom = document.getElementsByClassName('snowBottom');
 const snowTop = document.getElementsByClassName('snowTop');
 let snowing = false;
 let themeChanged = false;
+
+// Snow Theme
 document.getElementById('make-snow').addEventListener('click', function() {
-    if (!themeChanged) {
-        document.body.classList.add('snow-theme');
-        themeChanged = true;
-    }
+    // Önce diğer temaları kaldır
+    document.body.classList.remove('zombie-theme');
+    document.body.classList.add('snow-theme');
+    themeChanged = true;
+    
     if (!snowing) {
         startSnow();
         snowing = true;
     } 
 });
 
-document.getElementById('reset-theme').addEventListener('click', function() {
-    document.body.classList.remove('snow-theme');
-    stopSnow();
-    snowing = false;
-    themeChanged = false;
+// Zombie Theme
+
+document.getElementById('make-zombie').addEventListener('click', function() {
+  document.body.classList.remove('snow-theme');
+  stopSnow();
+  snowing = false;
+  
+  document.body.classList.add('zombie-theme');
+  startZombieEffects();
+  themeChanged = true;
 });
 
-document.getElementById('themeToggle').addEventListener('click', function() {
-  document.body.classList.toggle('snow-theme');
+// Reset Theme
+// Reset Theme butonu
+document.getElementById('reset-theme').addEventListener('click', function() {
+  document.body.classList.remove('snow-theme');
+  document.body.classList.remove('zombie-theme');
+  document.body.classList.remove('shake-effect');
+  stopSnow();
+  stopBlood();
+  stopLightning();
+  stopRain();
+  snowing = false;
+  themeChanged = false;
 });
 
 function startSnow() {
@@ -349,3 +370,92 @@ function stopSnow() {
     }
 }
 
+// themeToggle butonunu kaldırabilirsiniz çünkü artık her tema için ayrı buton var
+
+let lightningTimeout;
+
+function startZombieEffects() {
+  // Başlangıç kan efekti
+  startBlood();
+  
+  // 6 saniye sonra kan efektini durdur
+  setTimeout(() => {
+      stopBlood();
+  }, 6000);
+
+  // Ekran sallama efektini ekle ve 6 saniye sonra kaldır
+  document.body.classList.add('shake-effect');
+  setTimeout(() => {
+      document.body.classList.remove('shake-effect');
+  }, 6000);
+
+  // Şimşek ve yağmur efektini başlat
+  setTimeout(() => {
+      startRain();
+      startLightning();
+  }, 6500);
+}
+function startBlood() {
+  for (let i = 0; i < 50; i++) {
+      let blood = document.createElement('div');
+      blood.className = 'blood';
+      blood.style.left = Math.random() * window.innerWidth + 'px';
+      blood.style.width = Math.random() * 5 + 2 + 'px';
+      blood.style.height = Math.random() * 40 + 20 + 'px';
+      blood.style.animationDuration = Math.random() * 3 + 2 + 's';
+      document.body.appendChild(blood);
+  }
+}
+
+function stopBlood() {
+  let bloodDrops = document.getElementsByClassName('blood');
+  while (bloodDrops.length > 0) {
+      bloodDrops[0].parentNode.removeChild(bloodDrops[0]);
+  }
+}
+
+function createLightning() {
+  const lightning = document.createElement('div');
+  lightning.className = 'lightning';
+  document.body.appendChild(lightning);
+
+  setTimeout(() => {
+      lightning.remove();
+  }, 150);
+}
+
+function startLightning() {
+  function lightningLoop() {
+      createLightning();
+      // Rastgele aralıklarla şimşek çaktır (5-15 saniye arası)
+      lightningTimeout = setTimeout(lightningLoop, Math.random() * 10000 + 5000);
+  }
+  lightningLoop();
+}
+
+function stopLightning() {
+  clearTimeout(lightningTimeout);
+  const lightnings = document.getElementsByClassName('lightning');
+  while (lightnings.length > 0) {
+      lightnings[0].parentNode.removeChild(lightnings[0]);
+  }
+}
+
+
+function startRain() {
+  for (let i = 0; i < 100; i++) {
+      let raindrop = document.createElement('div');
+      raindrop.className = 'rain';
+      raindrop.style.left = Math.random() * window.innerWidth + 'px';
+      raindrop.style.animationDuration = Math.random() * 0.5 + 0.5 + 's';
+      raindrop.style.animationDelay = Math.random() * 2 + 's';
+      document.body.appendChild(raindrop);
+  }
+}
+
+function stopRain() {
+  let raindrops = document.getElementsByClassName('rain');
+  while (raindrops.length > 0) {
+      raindrops[0].parentNode.removeChild(raindrops[0]);
+  }
+}
