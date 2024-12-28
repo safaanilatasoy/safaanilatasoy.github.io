@@ -387,7 +387,7 @@ function startZombieEffects() {
   document.body.classList.add('shake-effect');
   setTimeout(() => {
       document.body.classList.remove('shake-effect');
-  }, 6000);
+  }, 3000);
 
   // Şimşek ve yağmur efektini başlat
   setTimeout(() => {
@@ -459,3 +459,5 @@ function stopRain() {
       raindrops[0].parentNode.removeChild(raindrops[0]);
   }
 }
+
+

@@ -65,7 +65,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
         return;
       case 'process':
         startProcessSimulation(processMessages);
-        return; // İşlem simülasyonu başladığı için fonksiyondan çıkıyoruz
+        return; 
+      case 'ipmap':
+        startProcessSimulation(ipmap);
+        return; 
+      case 'tskr567afsdd':
+        startProcessSimulation(TSKR567afsdD);
+        return; 
+      case 'breakhotdogcode':
+        startProcessSimulation(breakIP);
+        return; 
       default:
         response = `<span class="error">'${cmd}' is not recognized as an internal or external command, operable program or batch file.</span>`;
     }
@@ -90,17 +99,36 @@ document.addEventListener('DOMContentLoaded', (event) => {
     'Initializing Hotdog cart......',
     'Processing data...',
     'Loading hotdog toppings... pickles incoming...',
-    "Hotdog magic happening... don't blink",
+    "Hotdog magic happening... don't blink use ipmap",
     "Hotdog delivery confirmed... it's on the way!",
   ];
-
-  const getCode = [
-    'Hotdog code: 1234-5678-9101-1121',
-
+  const ipmap = [
+    '>> 432.543.534.765 == Code: pxtmywc3@vbs3',
+    '>> 876.435.324.867 == Code: mf^cod$gb7h8@',
+    '>> 432.645.876.987 == Code: x%w6s4gn96sbs',
+    '>> 443.645.657.768 == Code: 2#m72f$dk$^np',
+    '>> 192.123.321.536 == Code: tskr567afsdd',
+    '>> 432.645.876.867 == Code: f6$t#d8u2xdc3',
+    '>> 423.564.756.354 == Code: taqal2s&9$pyx',
+  
   ];
 
-  const getCode2 = [
-    'Hotdog code: 3443-5435-5345-4325',
+  const TSKR567afsdD = [
+    "Searching for tskr567afsdd...",
+    "tskr567afsdd found...",
+    "you are close to the hotdog code...",
+    ".",
+    "..",
+    "..",
+    ".......",
+    "............",
+    "use Search breakhotdogcode to find the code",
+  ];
+
+
+
+  const breakIP = [
+    '>> 432.543.534.765 == Code: pxtmywc + (999 + 2 * 364 ) % 2',
 
   ];
 
