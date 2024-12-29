@@ -569,7 +569,12 @@ function startLightBeams() {
     }
     document.body.appendChild(beamContainer);
 }
-
+function stopLightBeams() {
+  const beamContainers = document.querySelectorAll('.light-beams');
+  beamContainers.forEach(container => {
+      container.remove();
+  });
+}
 function startSparkles() {
     for (let i = 0; i < 30; i++) {
         let sparkle = document.createElement('div');
@@ -584,7 +589,7 @@ function startSparkles() {
 
 function stopHeavenEffects() {
     document.body.classList.remove('heaven-glow');
-    
+    stopLightBeams();
     // Tüm efektleri temizle
     ['feather', 'light-beams', 'sparkle'].forEach(className => {
         const elements = document.getElementsByClassName(className);
@@ -592,6 +597,7 @@ function stopHeavenEffects() {
             elements[0].parentNode.removeChild(elements[0]);
         }
     });
+
 }
 
 function startSquidGameEffects() {
@@ -654,18 +660,26 @@ function createDoll() {
 
 function startDollAnimation() {
   const doll = document.querySelector('.doll');
-  setInterval(() => {
+  // Önceki interval varsa temizle
+  if (window.dollInterval) {
+      clearInterval(window.dollInterval);
+  }
+  
+  window.dollInterval = setInterval(() => {
       doll.classList.toggle('turned');
       document.body.classList.toggle('red-light');
       
-      // Tüm şekillere titreme efekti ekle/kaldır
       const shapes = document.querySelectorAll('.squid-shape');
       shapes.forEach(shape => {
-          shape.classList.toggle('shake');
+          if (doll.classList.contains('turned')) {
+              shape.style.animation = `${shape.dataset.shake} ${(Math.random() * 0.5 + 0.5)}s ease-in-out infinite`;
+          } else {
+              shape.style.animation = 'float 8s ease-in-out infinite';
+          }
       });
-      
-  }, 5000); // Her 5 saniyede bir dön
+  }, 5000);
 }
+
 function stopSquidGameEffects() {
   // Tüm şekilleri temizle
   const shapes = document.getElementsByClassName('squid-shape');
