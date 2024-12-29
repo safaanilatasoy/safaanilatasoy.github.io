@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const cmdContent = document.querySelector('.fake-cmd .content');
   const cmdLine = document.querySelector('.fake-cmd .cmdline');
   const inputLine = document.querySelector('.fake-cmd .input-line');
-
+  let countdown = 20; // Geri sayım başlangıç değeri
+  let countdownInterval;
+  let isCountingDown = false;
   // CMD açıldığında komut satırına odaklan
   focusCommandLine();
 
@@ -66,14 +68,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
       case 'process':
         startProcessSimulation(processMessages);
         return; 
-      case 'ipmap':
-        startProcessSimulation(ipmap);
+      case 'help':
+        startProcessSimulation(helpMessages);
         return; 
-      case 'tskr567afsdd':
-        startProcessSimulation(TSKR567afsdD);
+      case 'hex':
+        startProcessSimulation(hex);
         return; 
-      case 'breakhotdogcode':
-        startProcessSimulation(breakIP);
+      case 'grill':
+        startProcessSimulation(grill);
+        return; 
+      case 'ketchup':
+        startProcessSimulation(ketchup);
+        return; 
+      case 'hotdog3333':
+        startCountdown();
+        return; 
+      case 'relish':
+        giveCode();
         return; 
       default:
         response = `<span class="error">'${cmd}' is not recognized as an internal or external command, operable program or batch file.</span>`;
@@ -102,39 +113,42 @@ document.addEventListener('DOMContentLoaded', (event) => {
     "Hotdog magic happening... don't blink use ipmap",
     "Hotdog delivery confirmed... it's on the way!",
   ];
-  const ipmap = [
-    '>> 432.543.534.765 == Code: pxtmywc3@vbs3',
-    '>> 876.435.324.867 == Code: mf^cod$gb7h8@',
-    '>> 432.645.876.987 == Code: x%w6s4gn96sbs',
-    '>> 443.645.657.768 == Code: 2#m72f$dk$^np',
-    '>> 192.123.321.536 == Code: tskr567afsdd',
-    '>> 432.645.876.867 == Code: f6$t#d8u2xdc3',
-    '>> 423.564.756.354 == Code: taqal2s&9$pyx',
-  
-  ];
-
-  const TSKR567afsdD = [
-    "Searching for tskr567afsdd...",
-    "tskr567afsdd found...",
-    "you are close to the hotdog code...",
-    ".",
-    "..",
-    "..",
-    ".......",
-    "............",
-    "use Search breakhotdogcode to find the code",
-  ];
-
-
-
-  const breakIP = [
-    '>> 432.543.534.765 == Code: pxtmywc + (999 + 2 * 364 ) % 2',
-
-  ];
-
-  
-
   const helpMessages = [
+    "Heat Every Xtra Topping On Sausages, Then Relish Every Ingredient's Natural Greatness.",
+  ];
+  const hex = [
+    '>> 0x626271',
+    '>> 0x736d6f6b65',
+    '>> 0x6772696c6c',
+    '>> 0x62756e',
+    '>> 0x6d757374617264',
+  
+  ];
+
+  const grill = [
+    "<span style='color: #fbc531'>Relish (1) AND <span style='color:#fbc531;'>Mustard (0)</span> OR <span style='color:#fbc531;'>Ketchup (1)</span> = ?",
+  ];
+
+
+
+  const ketchup = [
+    '>> fry1234',
+    '>> grill_boss',
+    '>> sausge4life',
+    '>> 0x736f736974354353',
+    '>> lets_eat_sausage',
+    '>> bun_mania',
+    '>> smoke_it_up',
+    '>> spicy_bites',
+    '>> bbq_rider',
+    '>> 686f74646f6733333333',
+    '>> crunchy_pickles',
+
+  ];
+
+  
+
+  const hotdog3333 = [
     'Available commands: help, dir, cls, exit, process',
   ];
 
@@ -162,6 +176,52 @@ document.addEventListener('DOMContentLoaded', (event) => {
   function scrollToBottom() {
     cmdContent.scrollTop = cmdContent.scrollHeight;
   }
+  function startCountdown() {
+    const cmdContent = document.querySelector('.fake-cmd .content');
+    const countdownMessage = document.createElement('div');
+    countdownMessage.className = 'line';
+    cmdContent.appendChild(countdownMessage);
+
+    countdownMessage.innerHTML = `Countdown: ${countdown} seconds remaining.`;
+    cmdContent.scrollTop = cmdContent.scrollHeight;
+
+    countdownInterval = setInterval(() => {
+      countdown--;
+      countdownMessage.innerHTML = `rElIsH dOesn'T LiKe musTard buT saUsages Do. <br/> <br/> <span style="color:red; font-weight:bold;">Warning!! System is down in : ${countdown} seconds please enter save code...</span>`;
+
+      if (countdown <= 0) {
+        clearInterval(countdownInterval);
+        restartPage();
+      }
+    }, 1000);
+  }
+
+  function restartPage() {
+    location.reload(); // Sayfayı yeniden yükler
+  }
+  function giveCode(){
+    stopCountdown();
+    const cmdContent = document.querySelector('.fake-cmd .content');
+    const codeMessage = document.createElement('div');
+    codeMessage.className = 'line';
+    cmdContent.appendChild(codeMessage);
+
+    codeMessage.innerHTML = `Code: h0td0gsc0mings00n`;
+   
+  }
+
+  function stopCountdown() {
+    clearInterval(countdownInterval);
+    isCountingDown = false;
+
+    const cmdContent = document.querySelector('.fake-cmd .content');
+    const stopMessage = document.createElement('div');
+    stopMessage.className = 'line';
+    stopMessage.innerHTML = `<span class="success">Countdown stopped successfully!</span>`;
+    cmdContent.appendChild(stopMessage);
+    cmdContent.scrollTop = cmdContent.scrollHeight;
+  }
+
 });
 
 window.focusCommandLine = function() {
@@ -180,3 +240,8 @@ window.focusCommandLine = function() {
       console.error('cmdLine öğesi bulunamadı');
     }
   };
+  
+
+ 
+
+

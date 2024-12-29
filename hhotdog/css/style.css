@@ -23,6 +23,10 @@ body{
    
 
 }
+.icon .selected {
+  background-color: rgba(234, 237, 234, 0.5);
+
+}
 
 
 .pixel,
@@ -196,6 +200,9 @@ font-weight: 600;
 .mainIcon{
 width: 5vh;
 
+}
+.mobile-warning{
+    display: none;
 }
 
 
@@ -535,14 +542,14 @@ border: 1px dotted #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 2px groove #026133;
+    border: 2px groove #000; 
    
 }
 .close-button {
     width: 20px;
     height: 20px;
     background-color: #07cc6e;
-    border: 3px groove #026133;
+    border: 3px groove #000;
     margin-right: 1px;
     cursor: pointer;
 }
@@ -593,7 +600,7 @@ border: 1px dotted #fff;
 #console-simulation {
     width: 100%;
     z-index: 99999;
-    background-color: #000;
+    background-color: #07cc6e;;
     position: fixed;
     color: #fff;
     display: flex;
@@ -670,11 +677,85 @@ border: 1px dotted #fff;
 
 /* Music PLayer */
 
+#loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 9999;
+}
 
+#cmd-screen {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
 
+#cmd-text {
+  color: #fff;
+  font-family: "Pixelify Sans", sans-serif;
+  white-space: pre-line;
+}
 
+#loader-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #07cc6e;
+  border: 4px solid #808080;
+  padding: 20px;
+  width: 400px;
+  text-align: center;
+  display: none;
+  z-index: 10000;
+  box-shadow: 5px 5px 10px #808080;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
 
+#xp-logo {
+  width: 300px;
+  margin-bottom: 20px;
+}
 
+#progress-container {
+  width: 100%;
+  height: 20px;
+  background: #fff;
+  border: 1px solid #000;
+  margin: 10px 0;
+}
+
+#progress-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to right, #e86b53, #d73c59);
+  transition: width 0.5s;
+}
+
+#status-text{
+  color: #000;
+  font-size: 14px;
+  margin: 15px 0;
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+body.loaded #loader-overlay {
+  display: none;
+}
+#start-text {
+  color: #000;
+  font-size: 14px;
+  margin: 15px 0;
+  font-family: "Pixelify Sans", sans-serif;
+  line-height: 1.5;
+}
+
+#countdown {
+}
 
 
 /* xWindowContainer*/
@@ -922,6 +1003,7 @@ cursor: grab;
   .window-inner-files{
     display: flex;
     flex-direction: column;
+    height: 100px;
   }
   .window-inner-files span{
    font-size: 10px;
@@ -1186,18 +1268,7 @@ cursor: grab;
   background-color: #2f7b60;
   color: #fff;
 }
-.zombie-theme .taskbar{
-  transition: background-color 0.5s ease;
-  background-color: #2f7b60;
-  color: #fff;
-}
-.zombie-theme .draggableImage span {
-  margin-top: 5px;
-  text-align: center;
-  font-size: 11px;
-  color: #fff;
-  font-weight: 700;
-}
+
 .snow-theme .taskbar button{
   transition: background-color 0.5s ease;
     background: #2f7b60;
@@ -1226,7 +1297,6 @@ cursor: grab;
   background-image: url("../images/whiteDogLogo.png"); /* Varsayılan arka plan resmi */
   background-size: cover;
   background-position: center;
-  background-color: #aa2a22;
   transition: background-color 0.5s ease;  /* Arka plan rengi ve opaklık için geçiş */
   cursor: default;
 }
@@ -1241,7 +1311,399 @@ cursor: grab;
 
 /* Snow theme end */
 
-/* Snow theme start*/
+/* Squid Game Theme Start */
+.squid-game-theme .popup-general-component .title-bar{
+  transition: background-color 0.5s ease;
+  background-color: 	#037a76;
+  color: #fff;
+  
+}
+.squid-game-theme .popup-general-component-2 .title-bar{
+  transition: background-color 0.5s ease;
+  background-color: 	#037a76;
+  color: #fff;
+  
+}
+.squid-game-theme .popup-general-component {
+transition: background-color 0.5s ease;
+background-color: 	#037a76;
+color: #fff;
+}
+.squid-game-theme .popup-general-component-2 {
+transition: background-color 0.5s ease;
+background-color: 	#037a76;
+color: #fff;
+
+}
+.squid-game-theme .taskbar{
+transition: background-color 0.5s ease;
+background-color: #037a76;
+color: #fff;
+}
+.squid-game-theme .taskbar{
+transition: background-color 0.5s ease;
+background-color: #037a76;
+color: #fff;
+}
+
+.squid-game-theme .taskbar button{
+transition: background-color 0.5s ease;
+  background: 	#037a76;
+  border-color: #fff #000 #000 #fff;
+  color: #fff;  
+
+}
+.squid-game-theme  .taskbar-tab.active {
+  
+background: #1f3520;
+}
+.squid-game-theme .bin-general-component{
+transition: background-color 0.5s ease;
+background-color: 	#037a76;
+
+}
+.squid-game-theme .title-bar{
+color: #fff;
+transition: background-color 0.5s ease;
+background-color: 	#037a76;
+}
+.squid-game-theme .close-button{
+background-color: 	#037a76;
+}
+.squid-game-theme{
+background-image: url("../images/squidgamebg.png"); /* Varsayılan arka plan resmi */
+background-size: cover;
+background-position: center;
+background-color: rgb(243, 12, 12);
+transition: background-color 0.5s ease;  /* Arka plan rengi ve opaklık için geçiş */
+cursor: default;
+}
+.squid-game-theme .classic, .squid-game-theme .window-url-bar {
+background-color: #e3f5f4 !important;
+color: #000;
+}
+.squid-game-theme .squid{
+display: block;
+}
+
+.squid-game-theme {
+  background-color: rgb(243, 12, 12);
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Kırmızı ışık efekti */
+.red-light {
+  background-color: rgb(33, 199, 33);
+  transition: background-color 0.3s ease;
+}
+/* Mevcut CSS'e eklenecek */
+.squid-shape {
+  position: absolute;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Titreme animasyonu */
+@keyframes shake {
+  0%, 100% { transform: translate(0, 0) rotate(0); }
+  10% { transform: translate(-2px, -2px) rotate(-1deg); }
+  20% { transform: translate(2px, -2px) rotate(1deg); }
+  30% { transform: translate(-2px, 2px) rotate(0); }
+  40% { transform: translate(2px, 2px) rotate(1deg); }
+  50% { transform: translate(-2px, -2px) rotate(-1deg); }
+  60% { transform: translate(2px, -2px) rotate(0); }
+  70% { transform: translate(-2px, 2px) rotate(-1deg); }
+  80% { transform: translate(-2px, -2px) rotate(1deg); }
+  90% { transform: translate(2px, 2px) rotate(0); }
+}
+
+/* Kırmızı ışık yandığında titreme efekti */
+.squid-shape.shake {
+  animation: shake 0.5s ease-in-out infinite;
+}
+
+/* Normal durumda süzülme animasyonu */
+@keyframes float {
+  0% {
+      transform: translate(0, 0) rotate(0);
+  }
+  33% {
+      transform: translate(10px, -15px) rotate(2deg);
+  }
+  66% {
+      transform: translate(-10px, -25px) rotate(-2deg);
+  }
+  100% {
+      transform: translate(0, 0) rotate(0);
+  }
+}
+
+/* Kırmızı ışık durumunda genel efektler */
+.red-light .squid-shape {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+/* Doll döndüğünde şekillerin animasyonunu değiştir */
+.red-light .squid-shape {
+  animation: shake 0.5s ease-in-out infinite !important;
+}
+/* Dalgona şekilleri */
+.dalgona {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #000;
+  background: transparent;
+  opacity: 0.8;
+  animation: float 3s ease-in-out infinite;
+}
+
+.dalgona.circle {
+  border-radius: 50%;
+}
+
+.dalgona.triangle {
+  background: none;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 35px solid #000;
+}
+
+.dalgona.square {
+  border: 2px solid #000;
+}
+.squid-shape {
+  position: absolute;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+      transform: translate(0, 0) rotate(0);
+  }
+  33% {
+      transform: translate(10px, -15px) rotate(2deg);
+  }
+  66% {
+      transform: translate(-10px, -25px) rotate(-2deg);
+  }
+  100% {
+      transform: translate(0, 0) rotate(0);
+  }
+}
+
+/* Medya sorguları - responsive tasarım için */
+@media (max-width: 768px) {
+  .squid-shape {
+      transform: scale(0.8);
+  }
+}
+
+
+
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0) rotate(45deg);
+  }
+  50% {
+      transform: translateY(-20px) rotate(45deg);
+  }
+}
+
+/* Maske şekilleri */
+.mask-container {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.mask-shape {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  animation: pulse 2s infinite;
+}
+
+.mask-shape.circle {
+  border-radius: 50%;
+}
+
+.mask-shape.triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.mask-shape.square {
+  /* Kare zaten default şekil */
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+/* Animasyon sırasında şekillerin dönmesi */
+@keyframes rotateSlow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.dalgona {
+    animation: float 3s ease-in-out infinite, rotateSlow 10s linear infinite;
+}
+/* Doll (영희) */
+.doll {
+  position: fixed;
+  bottom: -73px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 150px;
+  background: url('../images/doll.png') no-repeat center center; /* Bebek resmi ekleyin */
+  background-size: contain;
+  transition: transform 0.5s ease;
+}
+
+.doll.turned {
+  transform: translate(-50%, -50%) rotateY(180deg);
+  background: url('../images/dollturned.png') no-repeat center center; 
+  background-size: contain;
+  transition: transform 0.5s ease;
+
+}
+
+/* Neon efekti */
+.squid-game-theme::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+      rgba(255, 0, 255, 0.1) 0%,
+      rgba(255, 105, 180, 0.1) 100%);
+  pointer-events: none;
+}
+
+/* Ekstra animasyonlar */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-5px, 5px); }
+  40% { transform: translate(-5px, -5px); }
+  60% { transform: translate(5px, 5px); }
+  80% { transform: translate(5px, -5px); }
+  100% { transform: translate(0); }
+}
+
+.squid-game-theme.red-light .dalgona {
+  animation: glitch 0.3s infinite;
+}
+
+
+/* Squid Game Theme Start */
+.mcdonals-theme .popup-general-component .title-bar{
+  transition: background-color 0.5s ease;
+  background-color:#2f7b60;
+  color: #fff;
+  
+}
+.mcdonals-theme .popup-general-component-2 .title-bar{
+  transition: background-color 0.5s ease;
+  background-color: #2f7b60;
+  color: #fff;
+  
+}
+.mcdonals-theme .popup-general-component {
+transition: background-color 0.5s ease;
+background-color: #2f7b60;
+color: #fff;
+}
+.mcdonals-theme .popup-general-component-2 {
+transition: background-color 0.5s ease;
+background-color: #2f7b60;
+color: #fff;
+
+}
+.mcdonals-theme .taskbar{
+transition: background-color 0.5s ease;
+background-color: red;
+color: #fff;
+}
+
+.mcdonals-theme .taskbar button{
+transition: background-color 0.5s ease;
+  background: #2f7b60;
+  border-color: #fff #000 #000 #fff;
+  color: #fff;  
+
+}
+.mcdonals-theme  .taskbar-tab.active {
+  
+background: #1f3520;
+}
+.mcdonals-theme .bin-general-component{
+transition: background-color 0.5s ease;
+background-color: #2f7b60;
+
+}
+.mcdonals-theme .title-bar{
+color: #fff;
+transition: background-color 0.5s ease;
+background-color: #2f7b60;
+}
+.mcdonals-theme .close-button{
+background-color: #2f7b60;
+}
+.mcdonals-theme{
+background-image: url("../images/whiteDogLogo.png"); /* Varsayılan arka plan resmi */
+background-size: cover;
+background-position: center;
+background-color: #1e1d2f;
+transition: background-color 0.5s ease;  /* Arka plan rengi ve opaklık için geçiş */
+cursor: default;
+}
+.mcdonals-theme .classic, .mcdonals-theme .window-url-bar {
+background-color: #9cd7a0 !important;
+color: #000;
+}
+.mcdonals-theme .snow{
+display: block;
+}
+
+
+/* zombie theme start*/
+
+.zombie-theme .taskbar{
+  transition: background-color 0.5s ease;
+  background-color: #000;
+  color: #fff;
+}
+.zombie-theme .kurdeleCon{
+  color: #fff;
+}
+.zombie-theme .draggableImage span {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 11px;
+  color: #fff;
+  font-weight: 700;
+}
 .zombie-theme .popup-general-component .title-bar{
   transition: background-color 0.5s ease;
   background-color: #3b3a56 ;
@@ -1464,8 +1926,199 @@ display: block;
     flex-direction: column;
     
 }
-/* Snow theme end */
+/* zombie theme end */
 
+
+
+
+/* Heaven theme */
+
+.heaven-theme .popup-general-component .title-bar{
+  transition: background-color 0.5s ease;
+  background-color: #88b2ff;
+  color: #000;
+  
+}
+.heaven-theme .popup-general-component-2 .title-bar{
+  transition: background-color 0.5s ease;
+  background-color: #88b2ff;
+  color: #000;
+  
+}
+.heaven-theme .popup-general-component {
+transition: background-color 0.5s ease;
+background-color: #88b2ff;
+color: #000;
+}
+.heaven-theme .popup-general-component-2 {
+transition: background-color 0.5s ease;
+background-color: #88b2ff;
+color: #000;
+
+}
+.heaven-theme .taskbar{
+transition: background-color 0.5s ease;
+background-color: #566d98;
+color: #000;
+}
+
+.heaven-theme .taskbar button{
+transition: background-color 0.5s ease;
+  background: #405271;
+  border-color: #000 #000 #000 #000;
+  color: #000;  
+
+}
+.heaven-theme  .taskbar-tab.active {
+  
+background: #405271;
+}
+.heaven-theme .bin-general-component{
+transition: background-color 0.5s ease;
+background-color: #88b2ff;
+
+}
+.heaven-theme .title-bar{
+color: #000;
+transition: background-color 0.5s ease;
+background-color: #88b2ff;
+}
+.heaven-theme .close-button{
+background-color: #88b2ff;
+}
+.heaven-theme{
+background-image: url("../images/goldlogo.png"); /* Varsayılan arka plan resmi */
+background-size: cover;
+background-position: center;
+background-color: #88b2ff;
+transition: background-color 0.5s ease;  /* Arka plan rengi ve opaklık için geçiş */
+cursor: default;
+}
+.heaven-theme .classic, .heaven-theme .window-url-bar {
+background-color: #c7d6f1 !important;
+color: #000;
+}
+.heaven-theme .heaven{
+display: block;
+}
+
+
+.heaven-theme {
+  background: linear-gradient(to bottom, #87CEEB, #E0FFFF);
+  transition: all 1s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.heaven-glow {
+  animation: heavenGlow 4s infinite alternate;
+}
+
+@keyframes heavenGlow {
+  0% { filter: brightness(1); }
+  100% { filter: brightness(1.2); }
+}
+
+/* Tüy Efekti */
+.feather {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: url('feather.png') no-repeat center center; /* Tüy resmi ekleyin */
+  opacity: 0.7;
+  animation: featherFall 15s linear infinite;
+}
+
+@keyframes featherFall {
+  0% {
+      transform: translateY(-100px) rotate(0deg) translateX(0);
+      opacity: 0;
+  }
+  10% { opacity: 0.7; }
+  100% {
+      transform: translateY(100vh) rotate(360deg) translateX(100px);
+      opacity: 0;
+  }
+}
+
+/* Işık Huzmeleri */
+.light-beams {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.beam {
+  position: absolute;
+  top: -50%;
+  width: 100px;
+  height: 200vh;
+  background: linear-gradient(to bottom, 
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0) 100%);
+  transform: rotate(45deg);
+  animation: beamMove 8s infinite;
+}
+
+@keyframes beamMove {
+  0% { transform: rotate(45deg) translateX(-100%); opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { transform: rotate(45deg) translateX(100%); opacity: 0; }
+}
+
+/* Parıltı Efekti */
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: white;
+  border-radius: 50%;
+  animation: sparkleFloat infinite;
+}
+
+.sparkle::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+
+@keyframes sparkleFloat {
+  0%, 100% {
+      transform: scale(0.3) translate(0, 0);
+      opacity: 0;
+  }
+  50% {
+      transform: scale(1) translate(10px, -10px);
+      opacity: 0.8;
+  }
+}
+
+/* Yumuşak Bulutlar */
+.heaven-theme::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('clouds.png') repeat; /* Bulut resmi ekleyin */
+  opacity: 0.3;
+  animation: cloudMove 60s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes cloudMove {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}
 .popup-general-component iframe {
   overflow: hidden;
 }
@@ -1714,7 +2367,9 @@ display: block;
   width: calc(50% - 10px); /* 3 kolon */
   
 }
-
+.mobile-warning{
+  display: block;
+}
 .honorary-item span{
   font-size: 12px;
 }
@@ -1914,6 +2569,9 @@ height: 300px;
     #crypto-prices{
       display: none; 
    
+    }
+    .mobile-warning{
+      display: block;
     }
     .snowBottom{
       left: 25%;

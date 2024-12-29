@@ -68,44 +68,47 @@ dragable.forEach(function (image) {
 });
 
 
-let clickCount = 0;
-let clickTimer;
 // Klasör açma fonksiyonu
-function openFolder(folderId, displayCondition) {
-  clickCount++;
-  if(clickCount === 1){
-    clickTimer = setTimeout(() => {
-      // Tek tıklama işlemi (eğer gerekiyorsa)
-      console.log("Tek tıklama");
-      clickCount = 0; // Tıklama sayacını sıfırla
-  }, 300); // 300ms bekleme süresi
-  } else if (clickCount === 2){
-    // Çift tıklama olduğunda
-    clearTimeout(clickTimer); // Zamanlayıcıyı temizle
-    clickCount = 0; // Tıklama sayacını sıfırla
+// Klasör açma fonksiyonu
+function openFolder(iconElement, folderId, displayCondition) {
+  // İkona özel tıklama sayacı ve zamanlayıcı
+  if (!iconElement.clickCount) {
+    iconElement.clickCount = 0;
+  }
 
-    // Çift tıklama işlemi
-    if (temp == 1) {  // Bir kez sürükleme yapılmışsa
-      var folders = document.getElementsByClassName("folder");
-      for (var i = 0; i < folders.length; i++) {
-          folders[i].style.display = "none"; // Tüm klasörleri gizleyin
-      }
-     
+  iconElement.clickCount++;
 
-      var folder = document.getElementById(folderId);
-    folder.style.display = displayCondition; // Tıklanan klasörü gösterin
+  if (iconElement.clickCount === 1) {
+    // İlk tıklama: ikon seçili hale gelir
+    iconElement.classList.add('selected');
+
+    // Zamanlayıcı başlatılır
+    iconElement.clickTimer = setTimeout(() => {
+      // İkinci tıklama gelmezse seçimi kaldır
+      iconElement.classList.remove('selected');
+      iconElement.clickCount = 0;
+    }, 400); // Çift tıklama süresi (400ms ayarlanabilir)
+  } else if (iconElement.clickCount === 2) {
+    // İkinci tıklama: pencere açılır
+    clearTimeout(iconElement.clickTimer);
+    iconElement.clickCount = 0;
+    iconElement.classList.remove('selected');
+
+    // Pencere açma işlemleri
+    var folder = document.getElementById(folderId);
+    folder.style.display = displayCondition;
     folder.style.zIndex = "9999";
 
     // Eğer açılan pencere CMD ise, focusCommandLine'ı çağır
-      if (folderId === "fake-cmd") {
-        if (typeof window.focusCommandLine === 'function') {
-          window.focusCommandLine();
-        } else {
-          console.error('focusCommandLine fonksiyonu tanımlı değil');
-        }
+    if (folderId === "fake-cmd") {
+      if (typeof window.focusCommandLine === 'function') {
+        window.focusCommandLine();
+      } else {
+        console.error('focusCommandLine fonksiyonu tanımlı değil');
       }
+    }
 
-    // Taskbar'a yeni sekme ekleyin
+    // Taskbar'a yeni sekme eklenir
     const newTab = document.createElement('button');
     newTab.classList.add('taskbar-tab');
 
@@ -158,6 +161,7 @@ function openFolder(folderId, displayCondition) {
       default:
         newTab.textContent = "Tab";
     }
+
     newTab.setAttribute('data-window-id', folderId);
     newTab.addEventListener('click', () => setActiveTab(folderId, displayCondition));
     taskbarTabs.appendChild(newTab);
@@ -165,17 +169,7 @@ function openFolder(folderId, displayCondition) {
     // Yeni pencereyi aktif yap
     setActiveTab(folderId, displayCondition);
   }
- 
-    
-    newTab.setAttribute('data-window-id', folderId);
-    newTab.addEventListener('click', () => setActiveTab(folderId,displayCondition));
-    taskbarTabs.appendChild(newTab);
-
-    // Yeni pencereyi aktif yap
-    setActiveTab(folderId,displayCondition);
-  }
 }
-
 function closeWindow(folderId) {
   const window = document.getElementById(folderId);
   if (window) window.style.display = "none";
@@ -317,6 +311,13 @@ let themeChanged = false;
 document.getElementById('make-snow').addEventListener('click', function() {
     // Önce diğer temaları kaldır
     document.body.classList.remove('zombie-theme');
+    document.body.classList.remove('heaven-theme');
+
+    stopBlood();
+    stopRain();
+    stopLightning();
+    stopHeavenEffects();
+
     document.body.classList.add('snow-theme');
     themeChanged = true;
     
@@ -332,9 +333,72 @@ document.getElementById('make-zombie').addEventListener('click', function() {
   document.body.classList.remove('snow-theme');
   stopSnow();
   snowing = false;
-  
+
+  document.body.classList.remove('mcdonals-theme');
+  document.body.classList.remove('heaven-theme');
+  stopHeavenEffects();
   document.body.classList.add('zombie-theme');
   startZombieEffects();
+  themeChanged = true;
+});
+
+
+document.getElementById('make-heaven').addEventListener('click', function() {
+  document.body.classList.remove('snow-theme');
+  stopSnow();
+  snowing = false;
+  
+  document.body.classList.remove('zombie-theme');
+  stopBlood();
+  stopRain();
+  stopLightning();
+
+  document.body.classList.remove('mcdonals-theme');
+
+  document.body.classList.add('heaven-theme');
+  startHeavenEffects();
+  themeChanged = true;
+});
+
+document.getElementById('make-squid').addEventListener('click', function() {
+  document.body.classList.remove('snow-theme');
+  stopSnow();
+  snowing = false;
+  
+  document.body.classList.remove('zombie-theme');
+  stopBlood();
+  stopRain();
+  stopLightning();
+
+  document.body.classList.remove('heaven-theme');
+  stopHeavenEffects();
+  
+  document.body.classList.remove('mcdonals-theme');
+
+  document.body.classList.add('squid-game-theme');
+  startSquidGameEffects();
+
+  themeChanged = true;
+});
+
+document.getElementById('make-donalds').addEventListener('click', function() {
+  document.body.classList.remove('snow-theme');
+  stopSnow();
+  snowing = false;
+  
+  document.body.classList.remove('zombie-theme');
+  stopBlood();
+  stopRain();
+  stopLightning();
+
+  document.body.classList.remove('heaven-theme');
+  stopHeavenEffects();
+
+  document.body.classList.remove('squid-game-theme');
+  stopSquidGameEffects();
+
+  document.body.classList.add('mcdonals-theme');
+
   themeChanged = true;
 });
 
@@ -343,11 +407,17 @@ document.getElementById('make-zombie').addEventListener('click', function() {
 document.getElementById('reset-theme').addEventListener('click', function() {
   document.body.classList.remove('snow-theme');
   document.body.classList.remove('zombie-theme');
+  document.body.classList.remove('heaven-theme');
+  document.body.classList.remove('squid-game-theme');
+  document.body.classList.remove('mcdonals-theme');
   document.body.classList.remove('shake-effect');
+
   stopSnow();
   stopBlood();
   stopLightning();
   stopRain();
+  stopHeavenEffects();
+  stopSquidGameEffects();
   snowing = false;
   themeChanged = false;
 });
@@ -460,4 +530,201 @@ function stopRain() {
   }
 }
 
+function startHeavenEffects() {
+    startFeathers();
+    startLightBeams();
+    startSparkles();
+    
+    // Yumuşak bir parlaklık geçişi
+    document.body.classList.add('heaven-glow');
+}
 
+function startFeathers() {
+    for (let i = 0; i < 20; i++) {
+        let feather = document.createElement('div');
+        feather.className = 'feather';
+        feather.style.left = Math.random() * window.innerWidth + 'px';
+        feather.style.animationDuration = Math.random() * 5 + 10 + 's';
+        feather.style.animationDelay = Math.random() * 5 + 's';
+        document.body.appendChild(feather);
+    }
+}
+
+function startLightBeams() {
+    const beamContainer = document.createElement('div');
+    beamContainer.className = 'light-beams';
+    for (let i = 0; i < 5; i++) {
+        let beam = document.createElement('div');
+        beam.className = 'beam';
+        beam.style.left = Math.random() * 100 + '%';
+        beam.style.animationDelay = Math.random() * 4 + 's';
+        beamContainer.appendChild(beam);
+    }
+    document.body.appendChild(beamContainer);
+}
+
+function startSparkles() {
+    for (let i = 0; i < 30; i++) {
+        let sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.style.left = Math.random() * window.innerWidth + 'px';
+        sparkle.style.top = Math.random() * window.innerHeight + 'px';
+        sparkle.style.animationDuration = Math.random() * 2 + 1 + 's';
+        sparkle.style.animationDelay = Math.random() * 2 + 's';
+        document.body.appendChild(sparkle);
+    }
+}
+
+function stopHeavenEffects() {
+    document.body.classList.remove('heaven-glow');
+    
+    // Tüm efektleri temizle
+    ['feather', 'light-beams', 'sparkle'].forEach(className => {
+        const elements = document.getElementsByClassName(className);
+        while (elements.length > 0) {
+            elements[0].parentNode.removeChild(elements[0]);
+        }
+    });
+}
+
+function startSquidGameEffects() {
+  // Şekilleri oluştur
+  createShapes();
+  // Doll'u oluştur
+  createDoll();
+}
+
+function createShapes() {
+  const sections = 5;
+  const shapes = [
+    '../images/circle.png',    
+    '../images/triangle.png',
+    '../images/square.png',
+    '../images/umbrella.png'
+  ];
+  
+  for (let i = 0; i < sections; i++) {
+      for (let j = 0; j < sections; j++) {
+          if (Math.random() > 0.3) {
+              let shape = document.createElement('img');
+              shape.className = 'squid-shape';
+              shape.src = shapes[Math.floor(Math.random() * shapes.length)];
+              
+              // Her şekle random titreme animasyonu ata
+              const shakeNum = Math.floor(Math.random() * 4) + 1;
+              shape.dataset.shake = `shake${shakeNum}`;
+              
+              const sectionWidth = window.innerWidth / sections;
+              const sectionHeight = window.innerHeight / sections;
+              
+              const left = (i * sectionWidth) + (Math.random() * sectionWidth);
+              const top = (j * sectionHeight) + (Math.random() * sectionHeight);
+              
+              shape.style.left = `${left}px`;
+              shape.style.top = `${top}px`;
+              
+              const size = Math.random() * 20 + 40;
+              shape.style.width = `${size}px`;
+              shape.style.height = `${size}px`;
+              
+              // Random animasyon gecikmesi
+              shape.style.animationDelay = `${Math.random() * 5}s`;
+              
+              document.body.appendChild(shape);
+          }
+      }
+  }
+}
+
+
+function createDoll() {
+  const doll = document.createElement('div');
+  doll.className = 'doll';
+  document.body.appendChild(doll);
+  
+  // Doll'un dönme animasyonunu başlat
+  startDollAnimation();
+}
+
+function startDollAnimation() {
+  const doll = document.querySelector('.doll');
+  setInterval(() => {
+      doll.classList.toggle('turned');
+      document.body.classList.toggle('red-light');
+      
+      // Tüm şekillere titreme efekti ekle/kaldır
+      const shapes = document.querySelectorAll('.squid-shape');
+      shapes.forEach(shape => {
+          shape.classList.toggle('shake');
+      });
+      
+  }, 5000); // Her 5 saniyede bir dön
+}
+function stopSquidGameEffects() {
+  // Tüm şekilleri temizle
+  const shapes = document.getElementsByClassName('squid-shape');
+  while (shapes.length > 0) {
+      shapes[0].parentNode.removeChild(shapes[0]);
+  }
+  
+  // Doll'u temizle
+  const doll = document.querySelector('.doll');
+  if (doll) {
+      doll.parentNode.removeChild(doll);
+  }
+  
+  document.body.classList.remove('red-light');
+}
+
+function startDalgona() {
+    const shapes = ['circle', 'triangle', 'square'];
+    for (let i = 0; i < 15; i++) {
+        let dalgona = document.createElement('div');
+        dalgona.className = 'dalgona';
+        dalgona.classList.add(shapes[Math.floor(Math.random() * shapes.length)]);
+        dalgona.style.left = Math.random() * window.innerWidth + 'px';
+        dalgona.style.top = Math.random() * window.innerHeight + 'px';
+        dalgona.style.animationDelay = Math.random() * 2 + 's';
+        document.body.appendChild(dalgona);
+    }
+}
+
+function startShapes() {
+    const maskContainer = document.createElement('div');
+    maskContainer.className = 'mask-container';
+    
+    ['circle', 'triangle', 'square'].forEach(shape => {
+        let maskShape = document.createElement('div');
+        maskShape.className = `mask-shape ${shape}`;
+        maskContainer.appendChild(maskShape);
+    });
+    
+    document.body.appendChild(maskContainer);
+}
+
+function startRedLightGreenLight() {
+    const doll = document.createElement('div');
+    doll.className = 'doll';
+    document.body.appendChild(doll);
+    
+    setInterval(() => {
+        doll.classList.toggle('turned');
+        document.body.classList.toggle('red-light');
+        
+        // Ses efekti (isteğe bağlı)
+        if (doll.classList.contains('turned')) {
+            playSound('mugunghwa.mp3'); // Oyundaki karakteristik şarkı
+        }
+    }, 5000); // Her 5 saniyede bir dön
+}
+
+function stopSquidGameEffects() {
+    document.body.classList.remove('squid-game-theme', 'red-light');
+    
+    ['dalgona', 'mask-container', 'doll'].forEach(className => {
+        const elements = document.getElementsByClassName(className);
+        while (elements.length > 0) {
+            elements[0].parentNode.removeChild(elements[0]);
+        }
+    });
+}

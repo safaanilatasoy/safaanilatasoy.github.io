@@ -89,7 +89,7 @@ function displayNextConsoleMessage() {
     if (currentMessage < consoleMessages.length) {
         consoleOutput.textContent += consoleMessages[currentMessage] + "\n";
         currentMessage++;
-        setTimeout(displayNextConsoleMessage, 200); // Mesajlar 200ms'de bir gösterilecek
+        setTimeout(displayNextConsoleMessage, 1); // Mesajlar 200ms'de bir gösterilecek
     } else {
         showLoader();
     }

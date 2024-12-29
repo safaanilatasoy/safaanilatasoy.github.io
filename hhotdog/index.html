@@ -48,8 +48,8 @@
     <span>Olive ∞</span>
 </div>
  
-
-  <!-- <div id="console-simulation">
+<!-- 
+  <div id="console-simulation">
         <pre id="console-output"></pre>
         <div id="loader-text">
           <img src="./images/dogOsTextGreen.png" />
@@ -58,7 +58,26 @@
             <div class="xp-bar"></div>
         </div>
         <pre id="ascii-art" style="display: none;"></pre>
-    </div>    -->
+    </div>  -->
+<!-- 
+    <div id="loader-overlay">
+      <div id="cmd-screen">
+          <div id="cmd-text"></div>
+      </div>
+      
+      <div id="loader-container">
+          <img id="xp-logo" src="images/SpinD.gif" alt="loader gif">
+          <span><h1>DogOS V0.69.2</h1></span>
+          <div id="progress-container">
+              <div id="progress-bar"></div>
+          </div>
+          <div id="status-text">System Starting...</div>
+<div id="start-text" style="display: none;">
+    <div>Opening in <span id="countdown">6</span> seconds. <br/><strong>Press any key to open HotdogOS</strong></div>
+    <p class="mobile-warning">(For a smoother journey, try our website on desktop.)</p>
+</div>
+      </div>
+  </div> -->
     
     <div id="errorScreen" style="display:none;">
       <div class="error-content">
@@ -73,31 +92,31 @@
     <div class="container">
        <div class="left-bar">
       
-    <div class="draggableImage">
-<img class="mainIcon" src="images/HotDogsToken.png" onclick="openFolder('myComputer','block')"/>
+    <div class="draggableImage icon"  data-folder-id="myComputer">
+<img class="mainIcon" src="images/HotDogsToken.png" onclick="openFolder(this, 'myComputer','block')"/>
 
         <span>Token</span>
     </div>
 
     
-<div class = "draggableImage"><a href="https://x.com/AbstractHotDogs" target="_blank">
+<div class = "draggableImage icon" ><a href="https://x.com/AbstractHotDogs" target="_blank">
         <img class="mainIcon"  src="images/XLogo.png"/></a>
         <span>Follow on X</span>
       
     </div>
     
-<div class = "draggableImage"><a href="https://discord.com/invite/abstracthotdogs" target="_blank">
+<div class = "draggableImage icon"><a href="https://discord.com/invite/abstracthotdogs" target="_blank">
        <img class="mainIcon"  src="images/discordLogo.png"/></a>
         <span>Join Discord</span>
       
     </div>
-<div class = "draggableImage"><a href="https://www.instagram.com/hotdogs.wtf/" target="_blank">
+<div class = "draggableImage icon"><a href="https://www.instagram.com/hotdogs.wtf/" target="_blank">
        <img class="mainIcon"  src="images/instaLogo.png"/></a>
         <span>Follow on IG</span>
       
     </div>
 
-<div class = "draggableImage"><a href="https://medium.com/@Abstract_Hotdogs" target="_blank">
+<div class = "draggableImage icon"><a href="https://medium.com/@Abstract_Hotdogs" target="_blank">
         <img class="mainIcon"  src="images/mediumpixellogo.png"/></a>
         <span>Follow on Medium</span>
       
@@ -107,59 +126,59 @@
 
 
 
-     <div class="draggableImage">
+     <div class="draggableImage icon" data-folder-id="music-player">
 
-        <img class="mainIcon"  src="images/WinPumpLogo.png" onclick="openFolder('music-player','block')"/>
+        <img class="mainIcon"  src="images/WinPumpLogo.png" onclick="openFolder(this,'music-player','block')"/>
         <span>WinPump</span>
 
     </div>
   
-    <div class="draggableImage">
+    <div class="draggableImage icon">
 
         <img class="mainIcon"  src="images/iex.png"/>
         <span>Loading...</span>
 
     </div> 
-    <!-- <div class = "draggableImage" onclick="openFolder('paint-window','block')">
+    <!-- <div class = "draggableImage icon" onclick="openFolder(this,'paint-window','block')">
       <img class="mainIcon"  src="images/paintLogo.png"/>
       <span>Paint</span>
   </div> -->
-    <div class = "draggableImage" onclick="openFolder('calculator-window','grid')">
-        <img class="mainIcon"  src="images/calculatorIcon.png"/>
+    <div class = "draggableImage icon" data-folder-id="calculator-window" >
+        <img class="mainIcon"  src="images/calculatorIcon.png" onclick="openFolder(this,'calculator-window','grid')"/>
         <span>Calc</span>
     </div>
     
-    <div class = "draggableImage" onclick="openFolder('whitepaper-window','block')">
-        <img class="mainIcon"  src="images/notepadLogo.png"/>
+    <div class = "draggableImage icon" data-folder-id="whitepaper-window">
+        <img class="mainIcon"  src="images/notepadLogo.png" onclick="openFolder(this,'whitepaper-window','block')"/>
         <span>WPaper</span>
     </div>
     
-    <div class = "draggableImage" onclick="openFolder('fake-cmd','block')">
-        <img class="mainIcon"  src="images/dogMDLogo.png"/>
+    <div class = "draggableImage icon" data-folder-id="fake-cmd">
+        <img class="mainIcon"  src="images/dogMDLogo.png" onclick="openFolder(this,'fake-cmd','block')"/>
         <span>DogMD</span>
     </div>
 
-    <div class = "draggableImage" onclick="openFolder('crypto-prices','block')">
-      <img class="mainIcon"  src="images/pricesLogo.png"/>
+    <div class = "draggableImage icon" data-folder-id="crypto-prices">
+      <img class="mainIcon"  src="images/pricesLogo.png" onclick="openFolder(this,'crypto-prices','block')"/>
       <span>Market</span>
   </div>
 
-    <div class = "draggableImage" onclick="openFolder('dont-click','block')">
-      <img class="mainIcon"  src="images/fileLogo.png"/>
+    <div class = "draggableImage icon" data-folder-id="dont-click">
+      <img class="mainIcon"  src="images/fileLogo.png" onclick="openFolder(this,'dont-click','block')"/>
       <span>Don't Click Me</span>
   </div>
-  <div class = "draggableImage" onclick="openFolder('notepad-window','block')">
-    <img class="mainIcon"  src="images/npadLogo.png"/>
+  <div class = "draggableImage icon" data-folder-id="notepad-window">
+    <img class="mainIcon"  src="images/npadLogo.png" onclick="openFolder(this,'notepad-window','block')"/>
     <span>Notepad</span>
   </div>
 
    
-  <div class = "draggableImage themesButton" onclick="openFolder('themes-file','block')">
-    <img class="mainIcon"  src="images/kurabiye.png"/>
+  <div class = "draggableImage icon themesButton" data-folder-id="themes-file">
+    <img class="mainIcon"  src="images/kurabiye.png" onclick="openFolder(this,'themes-file','block')"/>
     <span>Themes</span>
 </div>
- <div class = "draggableImage themesButton" onclick="openFolder('honorary-file','block')">
-    <img class="mainIcon"  src="images/trophy.png"/>
+ <div class = "draggableImage icon themesButton" data-folder-id="honorary-file">
+    <img class="mainIcon"  src="images/trophy.png" onclick="openFolder(this,'honorary-file','block')"/>
     <span>Honorary Hotdogs</span>
 </div>
    
@@ -200,6 +219,18 @@
     <div class="window-inner-files" id="make-zombie">
       <img class="mainIcon"  src="images/zombiehead.png"/>
       <span>Zombie</span>
+  </div>
+    <div class="window-inner-files" id="make-heaven">
+      <img class="mainIcon"  src="images/angelhead.png"/>
+      <span>Heaven</span>
+  </div>
+    <div class="window-inner-files" id="make-squid">
+      <img class="mainIcon"  src="images/blackhead.png"/>
+      <span>Squid Game</span>
+  </div>
+    <div class="window-inner-files" id="make-donalds">
+      <img class="mainIcon"  src="images/angelhead.png"/>
+      <span>McDonalds</span>
   </div>
   
     
@@ -260,7 +291,7 @@
             
         </div>
         <div class="content classic" style="display: flex; flex-direction: row; justify-content: start;">
-          <div class="window-inner-files" onclick="openFolder('dont-click2','block')">
+          <div class="window-inner-files" onclick="openFolder(this,'dont-click2','block')">
             <img class="mainIcon"  src="images/fileLogo.png"/>
             <span>I SAID DON'T CLICK</span>
         </div>
@@ -289,7 +320,7 @@
           
       </div>
       <div class="content classic" style="display: flex; flex-direction: row; justify-content: start;">
-        <div class="window-inner-files" onclick="openFolder('dont-click3','block')">
+        <div class="window-inner-files" onclick="openFolder(this,'dont-click3','block')">
           <img class="mainIcon"  src="images/fileLogo.png"/>
           <span>BRO.. Last Chance</span>
       </div>
@@ -1310,6 +1341,20 @@
      
   </div>
 </div>
+<div class="popup-general-component-2 drag hidden heaven" id="popup-window-2">
+  <div class="title-bar header" id="myComputerHeader">
+      <div class="title">Popup</div>
+      <div class="close-button" data-folder-id="popup-window-2">
+          <img src="images/close.svg" width="20"/>
+      </div>
+  </div>
+  
+  <div class="content classic centered make-full" style=" background-image: url(../images/heaven.gif); background-size: contain;">
+
+
+     
+  </div>
+</div>
 <!-- Popup 2 End -->
 <!-- Popup 3 start -->
 <div class="supported-bin drag supportCon" id="support-window"  style="display: block;">
@@ -1463,7 +1508,7 @@
     <!-- Main JS File -->
     <script src="js/fakecmd.js"></script>
     <script src="js/index.js?v=1.1"></script>
-    <script src="js/loader.js"></script>
+    <script src="js/newLoader.js"></script>
     <script src="js/customContextMenu.js"></script>
     <script src="js/selectionRect.js"></script>
     <!-- <script src="js/draggableImage.js"></script>  -->
