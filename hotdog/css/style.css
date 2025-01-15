@@ -239,6 +239,7 @@ width: 5vh;
 }
 .draggableImage span {
     margin-top: 5px;
+    margin-left: 5px;
     text-align: center;
     font-size: 11px;
     color: #fff;
@@ -3299,6 +3300,7 @@ height: 300px;
 }
 .draggableImage span {
   margin-top: 5px;
+  margin-left: 5px;
   text-align: center;
   font-size: 8px;
   color: #000;
@@ -3439,6 +3441,7 @@ height: 300px;
     .draggableImage {
       width:50px;
       height: 80px;
+      
       position: absolute;
       top: 0; /* Başlangıç yüksekliği */
       left: 0; /* Başlangıç genişliği */
@@ -3460,10 +3463,12 @@ height: 300px;
     }
     .draggableImage span {
       margin-top: 5px;
+      margin-left: 5px;
       text-align: center;
       font-size: 8px;
       color: #000;
       font-weight: 700;
+      margin-left: 5px;
     }
 
     
@@ -3651,6 +3656,7 @@ height: 460px;
   }
   .draggableImage span {
     margin-top: 5px;
+    margin-left: 5px;
     text-align: center;
     font-size: 10px;
     color: #000;
@@ -3851,6 +3857,7 @@ margin: 150px;
     font-size: 10px;
     color: #000;
     font-weight: 700;
+    margin-left: 5px;
   }
 
   
@@ -4023,6 +4030,7 @@ margin: 150px;
   }
   .draggableImage span {
     margin-top: 5px;
+    margin-left: 5px;
     text-align: center;
     font-size: 10px;
     color: #000;
@@ -4195,6 +4203,7 @@ margin: 150px;
   }
   .draggableImage span {
     margin-top: 5px;
+    margin-left: 5px;
     text-align: center;
     font-size: 10px;
     color: #000;
