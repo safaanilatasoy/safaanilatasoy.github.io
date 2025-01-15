@@ -6,7 +6,258 @@ var offsetX, offsetY, isDragging = false;
 let temp = 0;
 let windowCount = 0;
 const taskbarTabs = document.getElementById('taskbarTabs');
+const discoverContent = `
+ <div class="awg-discover-container">
+  <div class="awg-discover-header">
+    <h1>Introducing the Abstract Global Wallet</h1>
+    <p>
+      Sign in with your socials, fund your wallet in seconds, and seamlessly use apps—all without having to install an extension.<br>
+      The Abstract Global Wallet is everything you need all in one place, creating one cohesive user experience.
+    </p>
+  </div>
 
+  <div class="awg-discover-image-section">
+   
+    <img src="./images/abs-discover-1.jpeg" alt="Abstract Global Wallet" class="awg-discover-image">
+  </div>
+
+  <div class="awg-discover-why-section">
+    <h2>Why?</h2>
+    <p>
+      The current crypto experience is fragmented. Separate browser extensions, non-transparent signatures, and a reliance on seed phrases create confusion and significant security risks for user assets.<br>
+      This needs to be fixed in order to onboard the next wave of crypto users.
+    </p>
+  </div>
+
+  <div class="awg-discover-image-section">
+   
+    <img src="./images/abs-discover-2.jpeg" alt="Crypto Experience Fragmented" class="awg-discover-image">
+  </div>
+
+  <div class="awg-discover-why-section">
+    <h2>What?</h2>
+    <p>
+      The Abstract Global Wallet (AGW)—an easily integrable, cohesive, and secure wallet system.
+      <br>
+      Create a wallet via email, socials, or passkeys. Fund it in seconds, and use it across apps with one-click logins.<br>
+      No seed phrases, no extensions—just seamless onchain interaction.
+    </p>
+  </div>
+
+    <div class="awg-discover-image-section">
+   
+    <img src="./images/abs-discover-3.jpeg" alt="Crypto Experience Fragmented" class="awg-discover-image">
+  </div>
+
+  <div class="awg-discover-why-section">
+    <h2>How?</h2>
+    <p>
+      At a high level, each AGW is comprised of two components—an embedded wallet signer powered by 
+<a href='https://x.com/privy_io' target='__blank'>@privy_io</a>
+ and a smart contract wallet.
+
+      <br>
+      The embedded wallet will be an authorized signer of the smart contract wallet, initiating transactions on its behalf.
+    </p>
+
+    
+  </div>
+ <div class="awg-discover-image-section">
+   
+    <img src="./images/abs-discover-4.jpeg" alt="Crypto Experience Fragmented" class="awg-discover-image">
+  </div>
+
+  <div class="awg-discover-why-section">
+    <p>
+      AGW leverages Abstract's native account abstraction protocol to execute transactions. Gas sponsorship will be available out of the box.
+      <br>
+      An SDK will be provided to developers to easily integrate AGW one-click login into their apps.
+    </p>
+  </div>
+
+   <div class="awg-discover-image-section">
+   
+    <img src="./images/abs-discover-5.jpeg" alt="Crypto Experience Fragmented" class="awg-discover-image">
+  </div>
+
+
+  <div class="awg-discover-why-section">
+    <h2>Vision</h2>
+    <p>
+      The vision for the Abstract Global Wallet is simple: reduce adoption bottlenecks in crypto and deliver a safe, user-friendly, and unified experience for onchain participants.
+      <br>
+      AGW will launch alongside our mainnet later this year. Stay tuned for updates.
+    </p>
+  </div>
+
+  
+   <div class="awg-discover-image-section">
+   
+    <img src="./images/abs-discover-6.jpeg" alt="Crypto Experience Fragmented" class="awg-discover-image">
+  </div>
+
+
+</div>
+`;
+
+const developContent = `
+ <div class="awg-discover-container">
+    <img src="./images/EMH-26.gif" class="awg-discover-image">
+  </div>
+
+  
+`;
+const rewardsContent = `
+ <div class="awg-discover-container">
+   <h2>Coming Soon</h2>
+  </div>
+
+  
+`;
+
+
+const defaultContent = `
+  <div class="abs-right-con-top">
+          <div class="top-left-con">
+            <img class="tlcon-img" src="./images/Abstract_Icon_DarkGreen.svg" alt="">
+            <div class="wallet-adr">
+              <span>0x213..3245</span>
+              <div class="wallet-adr-copy-icon">
+                <img src="./images/copyIcon.png" alt="">
+              </div>
+            </div>
+          </div>
+
+          <div class="bottom-left-con">
+            <div class="bottom-left-money">
+              <div class="money-eth">0.0278 <span>ETH</span></div>
+              <div class="money-usd">$65.99</div>
+            </div>
+            <div class="money-stats">
+              <div class="usdtats">$34.8</div>
+              <div class="stats-time">Last 7 days</div>
+            </div>
+          </div>
+
+          <div class="top-right-con">
+            <div class="abs-tr-button" id="wallet-fund">
+              <img src="./images/fundIcon.png" alt="">
+              <span>Fund</span>
+            </div>
+            <div class="abs-tr-button">
+              <img src="./images/receiveIcon.png" alt="">
+              <span>Receive</span>
+            </div>
+            <div class="abs-tr-button">
+              <img src="./images/sendIcon.png" alt="">
+              <span>Send</span>
+            </div>
+          </div>
+          <div class="bottom-right-con">
+            <div class="abs-wrapper">
+              <canvas id="abs-canvas"></canvas>
+              
+            </div>
+          </div>
+         </div>
+         <div class="abs-right-con-bottom" id="abs-right-con-bottom">
+          <div class="top-navbar">
+            <div class="button-list">
+              <div class="button active">Tokens</div>
+              <div class="button">NFT</div>
+              <div class="button">Apps</div>
+              <div class="button">Transaction history</div>
+
+            </div>
+            <input type="search" class="search" placeholder="Search"></input>
+          </div>
+          <div class="list">
+            <table>
+              <thead>
+                <tr class="abs-list-header">
+                  <th scope="col">Assets</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Balance</th>
+                  <th scope="col">Value</th>
+                  <th scope="col">Change</th>
+                  <th scope="col">Change,%</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Account"><img src="./images/usd-coin-usdc-logo.png" width="25"  alt=""><span>USDC</span></td>
+                  <td data-label="Assets">$1.00</td>
+                  <td data-label="Price">$22</td>
+                  <td data-label="Balance">$22</td>
+                  <td data-label="Change" style="color:green;">$0.23</td>
+                  <td data-label="Change%" style="color:green;">0.15%</td>
+                </tr>
+                <tr>
+                  <td scope="row" data-label="Account"><img src="./images/tether-usdt-logo.png" width="25"  alt=""><span>USDT</span></td>
+                  <td data-label="Due Date">$1.00</td>
+                  <td data-label="Amount">$240.81</td>
+                  <td data-label="Period">$240.81</td>
+                  <td data-label="Amount" style="color:green;">$0.24</td>
+                  <td data-label="Amount" style="color:green;">0.13%</td>
+                </tr>
+                <tr>
+                  <td scope="row" data-label="Account"><img src="./images/absLogo.png" width="25" alt="" style="border-radius: 50%;"><span>ABS</span></td>
+                  <td data-label="Due Date">$?.??</td>
+                  <td data-label="Amount">$1,181</td>
+                  <td data-label="Period">$?,??</td>
+                  <td data-label="Amount" style="color:green;">$1.25</td>
+                  <td data-label="Amount" style="color:green;">?.??%</td>
+                </tr>
+                <tr>
+                  <td scope="row" data-label="Acount"><img src="./images/HotDogsToken.png" width="25"  alt=""><span>HDG</span></td>
+                  <td data-label="Due Date">$?.??</td>
+                  <td data-label="Amount">$842</td>
+                  <td data-label="Period">$???</td>
+                  <td data-label="Amount" style="color:green;">$0.8</td>
+                  <td data-label="Amount" style="color:green;">?.??%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+`;
+
+function updateContent(newContent, title) {
+  const contentArea = document.getElementById('abs-content-area');
+  contentArea.innerHTML = newContent;
+  document.title = 'Hotdogs';
+  history.pushState({ content: newContent, title: title }, title, `#${title.toLowerCase()}`);
+}
+
+function setActiveButton(activeId) {
+  const buttons = document.querySelectorAll('.abs-left-navbar-list ul li');
+  buttons.forEach(button => {
+    if (button.id === activeId) {
+      button.classList.add('active');
+    } else {
+      button.classList.remove('active');
+    }
+  });
+}
+
+document.getElementById('abs-logo-con').addEventListener('click', () => {
+  updateContent(defaultContent);
+  setActiveButton(null);
+});
+
+
+document.getElementById('discover-btn').addEventListener('click', () => {
+  updateContent(discoverContent);
+  setActiveButton('discover-btn');
+});
+
+document.getElementById('develop-btn').addEventListener('click', () => {
+  updateContent(developContent);
+  setActiveButton('develop-btn');
+});
+document.getElementById('rewards-btn').addEventListener('click', () => {
+  updateContent(rewardsContent);
+  setActiveButton('rewards-btn');
+});
 
 
 
@@ -432,7 +683,7 @@ document.getElementById('make-abstract').addEventListener('click', function() {
   ['crypto-prices', 'popup-window-1', 'music-player', 'support-window','rope'].forEach(key => {
     closeWindow(key);
 });
-  ['abs-wallet', 'abs-wallet-video'].forEach(key => {
+  ['abs-wallet', 'abs-wallet-video','abs-wallet-video2'].forEach(key => {
     openWindow(key,"block");
 });
   themeChanged = true;
@@ -449,7 +700,7 @@ resetAllThemes();
 });
 openWindow('rope','flex');
 
-['abs-wallet', 'abs-wallet-video'].forEach(key => {
+['abs-wallet', 'abs-wallet-video', 'abs-wallet-video2'].forEach(key => {
   closeWindow(key);
 });
 });

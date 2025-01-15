@@ -1371,7 +1371,7 @@ cursor: grab;
 }
 #abs-wallet-video{
   display: block;
-  top: 50%;
+  top: 30%;
   left: 75%;
   max-width: 400px;
   max-height: 260px;
@@ -1379,7 +1379,69 @@ cursor: grab;
   height: 80%;
   
 }
+#abs-wallet-video2{
+  display: block;
+  top: 65%;
+  left: 75%;
+  max-width: 400px;
+  max-height: 260px;
+  width: 60%;
+  height: 80%;
+  
+}
+.awg-discover-container {
+  padding: 20px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
 
+.awg-discover-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.awg-discover-header h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.awg-discover-header p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.awg-discover-image-section {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.awg-discover-image {
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+}
+
+.awg-discover-why-section {
+  margin: 40px 0;
+}
+
+.awg-discover-why-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.awg-discover-why-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+  text-align: center;
+}
+.abs-left-navbar-list ul li.active {
+  background-color: #e0e0e0; /* Vurgulama rengi */
+}
 .abstract-theme .popup-general-component .title-bar{
   transition: background-color 0.5s ease;
  
@@ -1540,6 +1602,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f5f5f5",endCo
   padding: 5px;
   margin-left: 15px;
   width: 75%;
+  overflow: auto;
+  max-height: 100%; 
 }
 .abs-right-con-top{
   position: relative;

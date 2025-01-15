@@ -203,6 +203,10 @@
   <img class="mainIcon"  src="images/android-icon-72x72.png"/>
   <span>Go back</span>
 </div>
+<div class = "draggableImage icon go-back-icon" style="top: 100px;"><a href="https://discord.com/invite/abstractchain" target="__blank">
+  <img class="mainIcon"  src="images/discordLogo.png"/>
+  <span>Join DC</span>
+</div></a>
 
     </div>
 <!--* Themes Section start -->
@@ -1374,26 +1378,26 @@
         </div>
         <div class="abs-left-navbar-list">
           <ul>
-            <li>
+            <li id="discover-btn">
               <img src="./images/discoverIcon.png" alt="Discover icon" />
               <span>Discover</span>
             </li>
-            <li>
+            <li id="abs-logo-con">
               <img src="./images/swapIcon.png" alt="Discover icon" />
               <span>Swap</span>
             </li>
-            <li>
+            <li id="rewards-btn">
               <img src="./images/rewardsIcon.png" alt="Discover icon" />
               <span>Rewards</span>
             </li>
-            <li>
+            <li id="develop-btn">
               <img src="./images/developIcon.png" alt="Discover icon" />
               <span>Develop</span>
             </li>
           </ul>
         </div>
       </div>
-      <div class="abs-right-con">
+      <div class="abs-right-con" id="abs-content-area">
          <div class="abs-right-con-top">
           <div class="top-left-con">
             <img class="tlcon-img" src="./images/Abstract_Icon_DarkGreen.svg" alt="">
@@ -1505,7 +1509,7 @@
 </div>
 <div class="popup-general-component-3 drag hidden abs" id="abs-wallet-video" style="display: none;">
   <div class="title-bar header" id="myComputerHeader">
-      <div class="title">ABS Wallet Video</div>
+      <div class="title">AGW Video</div>
       <div class="close-button" data-folder-id="abs-wallet-video">
           <img src="images/close.svg" width="20"/>
       </div>
@@ -1516,6 +1520,20 @@
       <source src="./assets/abstractvideo.mp4" type="video/mp4">
       Your browser does not support this video.
     </video>
+
+      
+  </div>
+</div>
+<div class="popup-general-component-3 drag hidden abs" id="abs-wallet-video2" style="display: none;">
+  <div class="title-bar header" id="myComputerHeader">
+      <div class="title">Get Started with AGW</div>
+      <div class="close-button" data-folder-id="abs-wallet-video">
+          <img src="images/close.svg" width="20"/>
+      </div>
+  </div>
+  
+  <div class="content classic" style="padding: 0;margin: 0;">
+    <iframe width="390" height="225" src="https://www.youtube.com/embed/P5lvuBcmisU?si=pCJCoRZpJZ-CZhMu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
       
   </div>
@@ -1784,7 +1802,7 @@ https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js
   }
 };
 
-const weight = [60.0, 70, 90,120, 220, 550, 300, 400, 800, 1000];
+const weight = [60, 70, 90,120, 220, 550, 300, 400, 800, 1000];
 
 const labels = Array(weight.length).fill("");
 
