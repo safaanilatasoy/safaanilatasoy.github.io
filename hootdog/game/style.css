@@ -1,0 +1,359 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Pixelify Sans", serif;
+	text-decoration: none;
+}
+
+body {
+	background: url('images/background-img.gif') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.background {
+	height: 100vh;
+	width: 100vw;
+	background: url('images/background-img.gif') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.bird {
+	height: 200px;
+	width: 200px;
+	position: fixed;
+	top: 40vh;
+	left: 30vw;
+	z-index: 100;
+}
+.bird img{
+	object-fit: cover;
+	height: 200px;
+	width: 200px;
+}
+.pipe_sprite {
+	position: fixed;
+	top: 40vh;
+	left: 100vw;
+	height: 70vh;
+	width: 6vw;
+	background:radial-gradient(rgb(106, 176, 106) 50%, rgb(5, 74, 5));
+	border: 4px solid black;
+	border-radius: 5px;
+}
+
+.score {
+	position: fixed;
+	z-index: 10;
+	height: 10vh;
+	font-size: 3em;
+	font-weight: 100;
+	color: white;
+	-webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+	top: 0;
+	left: 0;
+	margin: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+@keyframes score-bump {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+.score_val {
+	color: gold;
+	font-weight: bold;
+	animation: score-bump 0.5s;
+}
+
+
+
+
+.profile-info{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 20px;
+}
+.generalCon{
+	display: flex;
+	width: 100%;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+.general-title{
+	margin-bottom: 40px;
+	font-size: 3em;
+}
+
+
+.loginDiscordCon{
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	align-items: center;
+	background-color: #fff;
+	width: 500px;
+	height:350px;
+	margin-left: 100px;
+	border-radius: 11px;
+	cursor: pointer;
+	color: #fff;
+	box-sizing: border-box;
+    text-decoration: none;
+}
+.loginDiscordButton{
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #226ea1;
+	width: 300px;
+	height:50px;
+	bottom: 10px;
+	margin-top: 20px;
+	margin-left: 10px;
+	border-radius: 11px;
+	cursor: pointer;
+	color: #fff;
+	box-sizing: border-box;
+    text-decoration: none;
+}
+.loginDiscordConLogo{
+	position: absolute;
+	justify-content: start;
+	align-items: start;
+	top: -50px;
+	width: 350px;
+}
+.loginDiscordButton:hover{
+	
+	background-color: #287cb4;
+
+	
+}
+
+.leaderboardCon{
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	flex-direction: column;
+	background-color: #fff;
+	width: 400px;
+	height: 600px;
+	border-radius: 11px;
+}
+.leaderboardCon .title{
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-top: 16px;
+	
+}
+.leaderboardCon .leaderboard{
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 20px;
+}
+.leaderboard{
+	list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.leaderboard li {
+	width: 340px;
+	padding: 10px 5px;
+    border-bottom: 1px solid #ccc;
+	display: flex;
+	justify-content: space-between;
+}
+.leaderboard .username {
+    width: 60%;
+    padding-left: 10px;
+    text-align: left;
+}
+.leaderboard .rank {
+    width: 10%;
+    text-align: right;
+    font-weight: bold;
+}
+.leaderboard li:nth-child(1) {
+    background-color: gold;
+}
+
+.leaderboard li:nth-child(2) {
+    background-color: silver;
+}
+
+.leaderboard li:nth-child(3) {
+    background-color: #cd7f32; /* Bronze */
+}
+.leaderboard .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.message {
+	position: absolute;
+	z-index: 10;
+	color: black;
+	top: 30%;
+	left: 50%;
+	font-size: 2em;
+	transform: translate(-50%, -50%);
+	justify-content: center;
+	text-align: center;
+}
+.messageStyle{
+	background: white;
+	padding: 30px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	border-radius: 11px;
+}
+.logo img{
+	width: 50px;
+	height: 50px;
+	padding: 10px;
+}
+
+
+@media screen and (max-width: 767px) { 
+
+	.message {
+        font-size: 30px;
+        top: 50%;
+        white-space: nowrap;
+    }
+    .score {
+        font-size: 6vh;
+    }
+    .bird {
+        width: 80px;
+        height: 60px;
+        left: 20vw;
+    }
+    .pipe_sprite {
+        width: 20vw;
+    }
+	.generalCon{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+
+	.loginDiscordCon{
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		align-items: center;
+		justify-content: center;
+		background-color: transparent;
+		width: 300px;
+		margin: 0 auto;
+		height:100px;
+		border-radius: 11px;
+		cursor: pointer;
+		color: #fff;
+		box-sizing: border-box;
+		text-decoration: none;
+	}
+	.loginDiscordConLogo{
+		display: none;
+	}
+	.loginDiscordCon span {
+		display: none;
+	}
+	.loginDiscordButton{
+		margin-bottom: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #226ea1;
+		width: 300px;
+		height:50px;
+		bottom: 10px;
+		border-radius: 11px;
+		cursor: pointer;
+		color: #fff;
+		box-sizing: border-box;
+		text-decoration: none;
+	}
+  
+	}
+
+	@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+		
+	.message {
+        font-size: 30px;
+        top: 50%;
+        white-space: nowrap;
+    }
+    .score {
+        font-size: 6vh;
+    }
+    .bird {
+        width: 80px;
+        height: 60px;
+        left: 20vw;
+    }
+    .pipe_sprite {
+        width: 20vw;
+    }
+	.generalCon{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+
+	.loginDiscordCon{
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		align-items: center;
+		justify-content: center;
+		background-color: transparent;
+		width: 300px;
+		margin: 0 auto;
+		height:100px;
+		border-radius: 11px;
+		cursor: pointer;
+		color: #fff;
+		box-sizing: border-box;
+		text-decoration: none;
+	}
+	.loginDiscordConLogo{
+		display: none;
+	}
+	.loginDiscordCon span {
+		display: none;
+	}
+	.loginDiscordButton{
+		margin-bottom: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #226ea1;
+		width: 300px;
+		height:50px;
+		bottom: 10px;
+		border-radius: 11px;
+		cursor: pointer;
+		color: #fff;
+		box-sizing: border-box;
+		text-decoration: none;
+	}
+	
+		
+	}
